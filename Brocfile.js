@@ -5,6 +5,9 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var app = new EmberApp({
 	vendorFiles: {
 		'handlebars.js': null //required for ember 1.10 upgrade, remove if upgrading ember-cli past 0.1.x
+	},
+	fingerprint: {
+	    exclude: ['assets/images']
 	}
 });
 
