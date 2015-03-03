@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="col-xs-12">
+		<div class="pull-right navigation-link btn btn-link" {{action "previous"}}>{{t "loc.previous"}}</div>
+		<div class="btn btn-link navigation-link" {{action "return"}}>{{t "loc.return"}}</div>
+	</div>
+	<ul>
+		<li><b>Your Choices:</b></li>
+	{{#each card in allCards}}
+		{{#if card.selectionDisplay}}
+		<li>{{card.cardTitle}} : {{card.selectionDisplay}}</li>
+		{{/if}}
+	{{/each}}
+	</ul>
+</div>

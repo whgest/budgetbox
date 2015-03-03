@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="col-xs-12">
+		<div class="btn btn-link pull-right navigation-link" {{action "next"}}>{{t "loc.next"}}</div>
+		<div class="btn btn-link navigation-link" {{action "previous"}}>{{t "loc.previous"}}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 col-md-6">
+			<img {{bind-attr class=":img-responsive" src=displayedCard.imagePath}}>
+		</div>
+
+		<div class="col-xs-8 col-md-6">
+			<h2>{{displayedCard.cardTitle}}</h2>
+			<h5><p>{{displayedCard.textString}}</p></h5>
+		</div>
+	</div>
+
+{{!-- 	<div class="hidden-xs col-lg-8">
+		{{time-line allCards=allCards}}
+	</div> --}}
+
+	<div class="col-xs-4 pull-right">
+		
+		<div {{bind-attr class=":user-option displayedCard.didSelectRaise:text-success"}}{{action "makeSelection" "raise"}}>
+			<div {{bind-attr class=":pull-left :fa :fa-check :text-success displayedCard.didSelectRaise::hide"}}></div>
+			{{t "loc.raiseFunding"}}
+		</div>
+		
+		<div {{bind-attr class=":user-option displayedCard.didSelectKeep:text-warning"}}{{action "makeSelection" "keep"}}>
+			<div {{bind-attr class=":pull-left :fa :fa-check :text-warning displayedCard.didSelectKeep::hide "}}></div>
+			{{t "loc.keepFunding"}}
+		</div>
+				
+		<div {{bind-attr class=":user-option displayedCard.didSelectCut:text-danger"}}{{action "makeSelection" "cut"}}>
+			<div {{bind-attr class=":pull-left :fa :fa-check :text-danger displayedCard.didSelectCut::hide"}}></div>
+			{{t "loc.cutFunding"}}
+		</div>
+
+	</div>
+</div>

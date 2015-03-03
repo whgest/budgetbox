@@ -1,0 +1,29 @@
+.container {
+	background-color: white;
+	padding: 30px;
+}
+
+.user-option {
+	cursor: pointer;
+	font-size: 16px;
+	border: 1px solid;
+	padding: 5px;
+	margin: 2px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+.navigation-link {
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.animate-card {
+	margin-left: -2500px;
+}
+
+hr {
+     background: black; 
+     width: 80%; 
+     height: 5px;
+}
