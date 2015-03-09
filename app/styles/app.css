@@ -13,13 +13,17 @@
 	border-radius: 3px;
 }
 
+.option-group {
+	margin-top: 20px;
+}
+
 .navigation-link {
 	font-size: 18px;
 	cursor: pointer;
 }
 
 .animate-card {
-	margin-left: -2500px;
+	margin-left: -1500px;
 }
 
 hr {

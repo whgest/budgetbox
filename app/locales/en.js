@@ -3,12 +3,15 @@ export default {
 		"next": "Next",
 		"previous": "Previous",
 		"return": "Back to Start",
+		"start": "Start",
 		"raiseFunding": "Raise Funding",
 		"keepFunding": "Keep Funding",
 		"cutFunding": "Cut Funding",
 		"raisedFunding": "Raised Funding",
 		"keptFunding": "Kept Funding",
-		"reducedFunding": "Cut Funding"
+		"reducedFunding": "Cut Funding",
+		"landingPageHeader": "BudgetBox Prototype",
+		"resultsHeader": "Your Choices:",
 	},
 
 	"cardTitle": {

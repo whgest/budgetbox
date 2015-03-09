@@ -4,8 +4,8 @@
 		<div class="btn btn-link navigation-link" {{action "return"}}>{{t "loc.return"}}</div>
 	</div>
 	<ul>
-		<li><b>Your Choices:</b></li>
-	{{#each card in allCards}}
+		<li><b>{{t "loc.resultsHeader"}}</b></li>
+	{{#each card in model.allCards}}
 		{{#if card.selectionDisplay}}
 		<li>{{card.cardTitle}} : {{card.selectionDisplay}}</li>
 		{{/if}}

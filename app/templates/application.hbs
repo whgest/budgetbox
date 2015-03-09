@@ -1,2 +1,9 @@
 <style>body {background-color:#ededed;}</style>
-{{outlet}}
+        <span class="pull-right">
+        	{{view "select" class="input-lg" 
+	        	content=availableLocales 
+	        	value=selectedLocale
+	        	optionValuePath="content.langCode"
+	        	optionLabelPath="content.displayText"}}
+        </span>
+{{outlet "card"}}

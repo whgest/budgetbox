@@ -6,12 +6,12 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-md-6">
-			<img {{bind-attr class=":img-responsive" src=displayedCard.imagePath}}>
+			<img {{bind-attr class=":img-responsive" src=model.displayedCard.imagePath}}>
 		</div>
 
 		<div class="col-xs-8 col-md-6">
-			<h2>{{displayedCard.cardTitle}}</h2>
-			<h5><p>{{displayedCard.textString}}</p></h5>
+			<h2>{{model.displayedCard.cardTitle}}</h2>
+			<h5><p>{{model.displayedCard.textString}}</p></h5>
 		</div>
 	</div>
 
@@ -19,20 +19,20 @@
 		{{time-line allCards=allCards}}
 	</div> --}}
 
-	<div class="col-xs-4 pull-right">
+	<div class="col-xs-4 pull-right option-group">
 		
-		<div {{bind-attr class=":user-option displayedCard.didSelectRaise:text-success"}}{{action "makeSelection" "raise"}}>
-			<div {{bind-attr class=":pull-left :fa :fa-check :text-success displayedCard.didSelectRaise::hide"}}></div>
+		<div {{bind-attr class=":user-option model.displayedCard.didSelectRaise:text-success"}}{{action "makeSelection" "raise"}}>
+			<div {{bind-attr class=":pull-left :fa :fa-check :text-success model.displayedCard.didSelectRaise::hide"}}></div>
 			{{t "loc.raiseFunding"}}
 		</div>
 		
-		<div {{bind-attr class=":user-option displayedCard.didSelectKeep:text-warning"}}{{action "makeSelection" "keep"}}>
-			<div {{bind-attr class=":pull-left :fa :fa-check :text-warning displayedCard.didSelectKeep::hide "}}></div>
+		<div {{bind-attr class=":user-option model.displayedCard.didSelectKeep:text-warning"}}{{action "makeSelection" "keep"}}>
+			<div {{bind-attr class=":pull-left :fa :fa-check :text-warning model.displayedCard.didSelectKeep::hide "}}></div>
 			{{t "loc.keepFunding"}}
 		</div>
 				
-		<div {{bind-attr class=":user-option displayedCard.didSelectCut:text-danger"}}{{action "makeSelection" "cut"}}>
-			<div {{bind-attr class=":pull-left :fa :fa-check :text-danger displayedCard.didSelectCut::hide"}}></div>
+		<div {{bind-attr class=":user-option model.displayedCard.didSelectCut:text-danger"}}{{action "makeSelection" "cut"}}>
+			<div {{bind-attr class=":pull-left :fa :fa-check :text-danger model.displayedCard.didSelectCut::hide"}}></div>
 			{{t "loc.cutFunding"}}
 		</div>
 

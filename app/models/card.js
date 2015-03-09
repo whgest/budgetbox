@@ -7,21 +7,22 @@ export default Em.Object.extend({
 	isActive: false,
 	selection: 'keep',
 	view: 'card',
+	localeDidChange: false,
 	didSelectRaise: Em.computed.equal('selection', 'raise'),
 	didSelectKeep: Em.computed.equal('selection', 'keep'),
 	didSelectCut: Em.computed.equal('selection', 'cut'),
 	imagePath: function() {
 		return CONFIG.baseImagePath.fmt(this.get('id'));
-	}.on('init').property(),
+	}.on('init').property('localeDidChange'),
 	textString: function() {
 		return this.t(CONFIG.baseTextLoc.fmt(this.get('id')));
-	}.on('init').property(),
+	}.on('init').property('localeDidChange'),
 	cardTitle: function() {
 		return this.t(CONFIG.baseTitleLoc.fmt(this.get('id')));
-	}.on('init').property(),
+	}.on('init').property('localeDidChange'),
 	cardShortTitle: function() {
 		return this.t(CONFIG.baseShortTitleLoc.fmt(this.get('id')));
-	}.on('init').property(),
+	}.on('init').property('localeDidChange'),
 	selectionDisplay: function() {
 		var operand = this.get('selection');
 		if (operand) {

@@ -1,6 +1,7 @@
 import Em from "ember";
 
-export default Em.ObjectController.extend({
+export default Em.Controller.extend({
+	needs: ['application'],
 	canNext: function() {
 		return this.get('model.allCards').length > this.get('model.displayedCard.index') + 1;
 	}.property('model.displayedCard'),
@@ -13,6 +14,9 @@ export default Em.ObjectController.extend({
 		this.set('model.displayedCard', newCard);
 		this.send('renderCard', newCard);
 	},
+	localeDidChange: function() {
+		this.get('model.displayedCard').notifyPropertyChange('localeDidChange');
+	}.observes('controllers.application.localeDidChange'),
 	actions: {
 		next: function() {
 			if (this.get('canNext')) {

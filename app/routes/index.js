@@ -8,12 +8,14 @@ export default Em.Route.extend({
 		});
 	},
 	renderTemplate: function(controller) {
-		this.render(controller.get('model.displayedCard.view'), {into: 'application'});
+		this.render(controller.get('model.displayedCard.view'), {into: 'application', outlet: 'card'});
 	},
 	actions: {
 		renderCard: function(card) {
 			//create new view here for animation reset?
-			this.render(card.get('view'));
+			var that = this;
+			this.disconnectOutlet({into: 'application', outlet: 'card'});
+			Em.run.next(function() {that.render(card.get('view'), {into: 'application', outlet: 'card'});});
 		}
 	}
 });
