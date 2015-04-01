@@ -4,7 +4,7 @@ import cardStackModel from "../models/card-stack";
 export default Em.Route.extend({
 	model: function() {
 		return cardStackModel.create({
-			t: this.t //pass localizer utility
+			t: this.t, //pass localizer utility
 		});
 	},
 	renderTemplate: function(controller) {

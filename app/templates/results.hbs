@@ -1,14 +1,12 @@
 <div class="container">
-	<div class="col-xs-12">
-		<div class="pull-right navigation-link btn btn-link" {{action "previous"}}>{{t "loc.previous"}}</div>
-		<div class="btn btn-link navigation-link" {{action "return"}}>{{t "loc.return"}}</div>
-	</div>
-	<ul>
-		<li><b>{{t "loc.resultsHeader"}}</b></li>
+	<h3 class="col-xs-12 align-objects">{{t "loc.resultsHeader"}}</h3>
 	{{#each card in model.allCards}}
-		{{#if card.selectionDisplay}}
-		<li>{{card.cardTitle}} : {{card.selectionDisplay}}</li>
+		{{#if card.showResults}}
+			{{results-tab card=card action="jumpToCard"}}
 		{{/if}}
 	{{/each}}
-	</ul>
+	<div class="total-display col-xs-12 align-objects">{{estimatedTotalText}}</div>
+	<div class="col-xs-12 align-objects">
+		<button class="btn btn-primary" {{action "postUserResponse"}}>{{t "loc.submit"}}</button>
+	</div>
 </div>

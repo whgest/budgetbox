@@ -1,20 +1,73 @@
 .container {
 	background-color: white;
-	padding: 30px;
+	padding: 0;
+}
+
+.app-header {
+	padding: 15px 15px 15px 45px;
+	color: white;
+	background-color: black;
+	font-size: 16px;
+}
+
+.app-footer {
+	padding: 8px 15px 8px 15px;
+	color: white;
+	background-color: black;
+	font-size: 14px;
+}
+
+.language-option {
+	margin-top: 20px;	
+}
+
+.district-option {
+	padding-right: 0px;
+}
+
+.card-body {
+	font-size: 13px;
+}
+
+.btn-primary {
+	padding: 10px;
+	color: white;
+	background-color: black;	
+	width: 100%;
+	margin-bottom:25px;
+}
+
+.btn-default {
+	padding: 8px;
+	color: black;
+	background-color: lightgray;	
+	width: 100%;
+	margin-top:40px; 
+	margin-bottom:25px;
+}
+
+.btn-link {
+	color: darkgray;
+	text-decoration: underline;
+	font-size: 11px;
+}
+
+.align-objects {
+	padding: 0 30px 0 30px;
 }
 
 .user-option {
 	cursor: pointer;
 	font-size: 16px;
-	border: 1px solid;
+	border: 2px solid;
 	padding: 5px;
-	margin: 2px;
-	text-align: center;
-	border-radius: 3px;
+	margin-top: 25px;
+	border-radius: 6px;
 }
 
-.option-group {
-	margin-top: 20px;
+.landing-page-form {
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
 
 .navigation-link {
@@ -26,8 +79,51 @@
 	margin-left: -1500px;
 }
 
-hr {
-     background: black; 
-     width: 80%; 
-     height: 5px;
+.expando-tab {
+	background-color: lightgray;
+	color: black;
+	cursor: pointer;
+	padding: 12px;
+	margin-bottom: 2px;
+	font-size: 16px;
+}
+
+.expando-text {
+	padding: 10px 30px 10px 30px;
+}
+
+.form-control {
+	border: 1px solid darkgray;
+}
+
+.option-text-small {
+	font-size: 14px;
+}
+
+.option-text-large {
+	font-size: 18px;
+}
+
+.results-tab {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	padding: 8px 30px 8px 30px;
+	cursor: pointer;
+}
+
+.total-display {
+	margin-bottom: 20px;
+	padding: 8px 30px 8px 30px;
+	color: black;
+	background-color: gray;
+	font-size: 14px;
+}
+
+label {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
 }

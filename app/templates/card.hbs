@@ -1,40 +1,32 @@
 <div class="container">
-	<div class="col-xs-12">
-		<div class="btn btn-link pull-right navigation-link" {{action "next"}}>{{t "loc.next"}}</div>
-		<div class="btn btn-link navigation-link" {{action "previous"}}>{{t "loc.previous"}}</div>
-	</div>
+	<h3 class="col-xs-12 align-objects">{{model.displayedCard.cardTitle}}</h3>
+	{{expando-tab tabLabel="loc.whatServices" textContents=model.displayedCard.servicesTextString}}
+	{{expando-tab tabLabel="loc.servicesProvided" textContents=model.displayedCard.providedTextString}}
 
-	<div class="row">
-		<div class="col-xs-12 col-md-6">
-			<img {{bind-attr class=":img-responsive" src=model.displayedCard.imagePath}}>
-		</div>
-
-		<div class="col-xs-8 col-md-6">
-			<h2>{{model.displayedCard.cardTitle}}</h2>
-			<h5><p>{{model.displayedCard.textString}}</p></h5>
-		</div>
-	</div>
-
-{{!-- 	<div class="hidden-xs col-lg-8">
-		{{time-line allCards=allCards}}
-	</div> --}}
-
-	<div class="col-xs-4 pull-right option-group">
-		
-		<div {{bind-attr class=":user-option model.displayedCard.didSelectRaise:text-success"}}{{action "makeSelection" "raise"}}>
-			<div {{bind-attr class=":pull-left :fa :fa-check :text-success model.displayedCard.didSelectRaise::hide"}}></div>
-			{{t "loc.raiseFunding"}}
+	<div class="col-xs-12 align-objects">		
+		<div {{bind-attr class=":user-option model.displayedCard.didSelectRaise:text-success"}}{{action "makeSelection" 1}}>
+			<span class="option-text-small">{{t "loc.raiseFunding"}}</span><br>
+			<span class="option-text-large">{{model.displayedCard.raisePrompt}}</span>
 		</div>
 		
-		<div {{bind-attr class=":user-option model.displayedCard.didSelectKeep:text-warning"}}{{action "makeSelection" "keep"}}>
-			<div {{bind-attr class=":pull-left :fa :fa-check :text-warning model.displayedCard.didSelectKeep::hide "}}></div>
-			{{t "loc.keepFunding"}}
+		<div {{bind-attr class=":user-option model.displayedCard.didSelectKeep:text-warning"}}{{action "makeSelection" 0}}>
+			<span class="option-text-small">{{t "loc.keepFunding"}}</span><br>
+			<span class="option-text-large">{{model.displayedCard.keepPrompt}}</span>
 		</div>
 				
-		<div {{bind-attr class=":user-option model.displayedCard.didSelectCut:text-danger"}}{{action "makeSelection" "cut"}}>
-			<div {{bind-attr class=":pull-left :fa :fa-check :text-danger model.displayedCard.didSelectCut::hide"}}></div>
-			{{t "loc.cutFunding"}}
+		<div {{bind-attr class=":user-option model.displayedCard.didSelectCut:text-danger"}}{{action "makeSelection" -1}}>
+			<span class="option-text-small">{{t "loc.cutFunding"}}</span><br>
+			<span class="option-text-large">{{model.displayedCard.cutPrompt}}</span>
 		</div>
-
 	</div>
+
+	<div class="col-xs-12 align-objects">
+		<button class="btn btn-default" {{action "previous"}}>{{t "loc.back"}}</button>
+	</div>
+
+	<div class="app-footer col-xs-12">
+	    {{footerString}}
+	</div>
+
 </div>
+
