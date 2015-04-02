@@ -4,19 +4,19 @@
 	{{expando-tab tabLabel="loc.servicesProvided" textContents=model.displayedCard.textBlockTwo}}
 
 	<div class="col-xs-12 align-objects">		
-		<div {{bind-attr class=":user-option model.displayedCard.didSelectRaise:text-success"}}{{action "makeSelection" "raise"}}>
+		<div {{bind-attr class=":user-option :raise model.displayedCard.didSelectRaise:selected"}}{{action "makeSelection" "raise"}}>
 			<div class="fa fa-long-arrow-up icon-large"></div>
 			<span class="option-text-small">{{t "loc.raiseFunding"}}</span><br>
 			<span class="option-text-large">{{model.displayedCard.raisePrompt}}</span>
 		</div>
 		
-		<div {{bind-attr class=":user-option model.displayedCard.didSelectKeep:text-warning"}}{{action "makeSelection" "keep"}}>
+		<div {{bind-attr class=":user-option :keep model.displayedCard.didSelectKeep:selected"}}{{action "makeSelection" "keep"}}>
 			<div class="fa fa-long-arrow-right icon-large" style="margin:8px 7px 0 3px;"></div>
 			<span class="option-text-small">{{t "loc.keepFunding"}}</span><br>
 			<span class="option-text-large">{{model.displayedCard.keepPrompt}}</span>
 		</div>
 				
-		<div {{bind-attr class=":user-option model.displayedCard.didSelectCut:text-danger"}}{{action "makeSelection" "cut"}}>
+		<div {{bind-attr class=":user-option :cut model.displayedCard.didSelectCut:selected"}}{{action "makeSelection" "cut"}}>
 			<div class="fa fa-long-arrow-down icon-large"></div>
 			<span class="option-text-small">{{t "loc.cutFunding"}}</span><br>
 			<span class="option-text-large">{{model.displayedCard.cutPrompt}}</span>

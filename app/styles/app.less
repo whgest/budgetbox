@@ -1,3 +1,18 @@
+@header-color: black;
+@header-text: white;
+
+@link-color: darkgray;
+@link-color-hover: black;
+
+@raise-color: darkgreen;
+@keep-color: black;
+@cut-color: darkred;
+@raise-text-selected: white;
+@keep-text-selected: white;
+@cut-text-selected: white;
+
+
+
 .container-fluid {
 	background-color: white;
 	padding: 0;
@@ -6,25 +21,25 @@
 
 .app-header {
 	padding: 15px 15px 15px 20px;
-	color: white;
-	background-color: black;
+	color: @header-text;
+	background-color: @header-color;
 	font-size: 16px;
 }
 
 .app-footer {
 	padding: 8px 15px 8px 20px;
-	color: white;
-	background-color: black;
+	color: @header-text;
+	background-color: @header-color;
 	font-size: 14px;
 }
 
 .language-option {
 	margin-top: 20px;	
-	padding-right:  0px;
+	padding-right: 0;
 }
 
 .district-option {
-	padding-right: 0px;
+	padding-right: 0;
 }
 
 .card-body {
@@ -49,9 +64,15 @@
 }
 
 .btn-link {
-	color: darkgray;
+	color: @link-color;
 	text-decoration: underline;
 	font-size: 11px;
+	&:hover {
+		color: @link-color-hover;
+	}
+	&.large {
+		font-size: 16px;
+	}
 }
 
 .align-objects {
@@ -65,6 +86,28 @@
 	padding: 5px;
 	margin-top: 25px;
 	border-radius: 6px;
+}
+
+.raise {
+	color: @raise-color;
+	&.selected {
+		background-color: @raise-color;
+		color: @raise-text-selected;
+	}
+}
+.keep {
+	color: @keep-color;
+	&.selected {
+		background-color: @keep-color;
+		color: @keep-text-selected;
+	}
+}
+.cut {
+	color: @cut-color;
+	&.selected {
+		background-color: @cut-color;
+		color: @cut-text-selected;
+	}
 }
 
 .landing-page-form {
@@ -102,7 +145,6 @@
 
 .expando-tab {
 	background-color: lightgray;
-	color: black;
 	cursor: pointer;
 	padding: 12px 12px 12px 20px;
 	margin-bottom: 2px;
@@ -134,8 +176,7 @@
 .total-display {
 	margin-bottom: 20px;
 	padding: 8px 20px 8px 20px;
-	color: black;
-	background-color: gray;
+	background-color: lightgray;
 	font-size: 14px;
 }
 
