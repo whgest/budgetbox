@@ -8,9 +8,9 @@ export default Em.Component.extend({
 	iconClass: function() {
 		var dir,
 			selection = this.get('card.selection');
-			dir = (selection === 1) ? 'up' : (selection === 0) ? 'right' : 'down'; 
+			dir = (selection === "raise") ? 'up' : (selection === "keep") ? 'right' : 'down'; 
 		return 'fa-long-arrow-%@'.fmt(dir);
-	}.property(),
+	}.property('card.selection'),
 	click: function() {
 		this.sendAction('action', this.get('card.index'));
 	}

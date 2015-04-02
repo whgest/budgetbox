@@ -15,15 +15,15 @@
 		</div>	 --}}
 		<div class="form-group">
 			<label for="raceField">{{t "loc.yourRace"}}</label>
-			{{view "select" class="form-control input-lg" prompt=racePrompt elementId="raceField" content=raceOptions value=userResponseModel.race}}
+			{{view "select" class="form-control input-lg" prompt=racePrompt elementId="raceField" content=raceOptions value=userFeedbackModel.race}}
 		</div>
 		<div class="form-group">
 			<label for="ageField">{{t "loc.yourAge"}}</label>
-			{{view "select" class="form-control input-lg" prompt=agePrompt elementId="ageField" content=ageOptions value=userResponseModel.ageRange}}
+			{{view "select" class="form-control input-lg" prompt=agePrompt elementId="ageField" content=ageOptions value=userFeedbackModel.ageBracket}}
 		</div>
 		<div class="form-group">
 			<label for="feedbackField">{{t "loc.yourExperience"}}</label>
-			{{input class="form-control input-lg text-box" elementId="feedbackField" value=userResponseModel.feedback}}
+			{{textarea class="form-control input-lg text-box" elementId="feedbackField" value=userFeedbackModel.comments}}
 		</div>
 	</form>
 	<div class="col-xs-12 align-objects">

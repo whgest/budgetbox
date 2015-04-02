@@ -52,6 +52,14 @@ export default {
 			view: 'feedback',
 			showResults: false,			
 			textBlockTwo: ''
-		}
+		},
+		{
+			id: 'resources',
+			view: 'resources',
+			showResults: false,			
+			textBlockOne: '',
+			textBlockTwo: ''
+		},
+
 	]
 };

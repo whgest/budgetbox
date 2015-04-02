@@ -4,6 +4,7 @@ import CONFIG from "../card-config";
 export default Em.Controller.extend({
 	needs: ['application'],
 	userResponseModel: null,
+	userFeedbackModel: null,
 	displayedCardIndex: Em.computed.alias('model.displayedCard.index'),
 	districtLinkout: CONFIG.linkToDistrictMap,
 	districtPrompt: function() {
@@ -24,14 +25,6 @@ export default Em.Controller.extend({
 		return options;
 	}.on('init').property(),
 
-	canNext: function() {
-		return this.get('model.allCards').length > this.get('model.displayedCard.index') + 1;
-	}.property('model.displayedCard'),
-
-	canPrev: function() {
-		return this.get('model.displayedCard.index') > 0;
-	}.property('model.displayedCard'),
-
 	transitionCard: function(cardIndex) {
 		var newCard = (cardIndex) ? this.get('model.allCards')[cardIndex] : this.get('model.allCards')[0];
 		this.set('model.displayedCard', newCard);
@@ -45,7 +38,8 @@ export default Em.Controller.extend({
 	}.observes('controllers.application.localeDidChange'),
 
 	footerString: function() {
-		return this.t("loc.progress", this.get('model.displayedCard.index').toString(), (this.get('model.allCards.length')-2).toString());
+		var total = this.get('model.allCards').filterBy('showResults', true).length;
+		return this.t("loc.progress", this.get('model.displayedCard.index').toString(), total.toString());
 	}.property('model.displayedCard'),
 
 	estimatedTotalText: function() {
@@ -54,14 +48,20 @@ export default Em.Controller.extend({
 
 	actions: {
 		next: function() {
-			if (this.get('canNext')) {
-				this.transitionCard(this.get('displayedCardIndex') + 1);
+			var displayedCardIndex = this.get('displayedCardIndex'),
+				allCards = this.get('model.allCards'),
+				nextCardNeedingSelection = 0;
+			for(var i=displayedCardIndex + 1; i<allCards.length; i++) {
+				if(!allCards[i].get('selection')) {
+					nextCardNeedingSelection = i;
+					break;
+				}
 			}
+			this.transitionCard(nextCardNeedingSelection);
 		},
 		previous: function() {
-			if (this.get('canPrev')) {
-				this.transitionCard(this.get('displayedCardIndex') - 1);
-			}
+			this.transitionCard(this.get('displayedCardIndex') - 1);
+			
 		},
 		jumpToCard: function(cardIndex) {
 			this.transitionCard(cardIndex);
@@ -70,6 +70,7 @@ export default Em.Controller.extend({
 			var propName = this.get('model.displayedCard.modelPropName'), 
 				that = this;
 			this.set('model.displayedCard.selection', operand);
+			this.notifyPropertyChange('model.displayedCard.selection');
 			this.get('userResponseModel').set(propName, CONFIG.percentChange[operand]);
 			Em.run.later(function() {
 				that.send('next');

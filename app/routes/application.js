@@ -7,9 +7,14 @@ export default Em.Route.extend({
 	setupController: function(controller, model) {
 		this._super(controller, model);
 		this.controllerFor('index').set('userResponseModel', this.get('controller.model'));
+		this.controllerFor('index').set('userFeedbackModel', this.store.createRecord('userFeedback', {id: 0}));
 	},
 	actions: {
 		postUserResponse: function() {
+			//this.get('model').save();
+			this.controllerFor('index').send('next');
+		},
+		postFeedback: function() {
 			//this.get('model').save();
 			this.controllerFor('index').send('next');
 		},

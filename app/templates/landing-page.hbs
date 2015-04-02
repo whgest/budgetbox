@@ -11,7 +11,7 @@
 	<form class="landing-page-form col-xs-12 align-objects">
 		<div class="form-group">
 			<label for="zipCodeField">{{t "loc.zipCode"}}*</label>			
-			{{input class="form-control input-lg" elementId="zipCodeField" value=userResponseModel.zipCode}}
+			{{input class="form-control input-lg" type="text" maxlength=5 elementId="zipCodeField" value=userResponseModel.zipCode}}
 		</div>	
 		<div class="form-group">
 			<label for="districtField">{{t "loc.districtLabel"}}*</label>

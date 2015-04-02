@@ -9,9 +9,9 @@ export default Em.Object.extend({
 	showResults: true,
 	view: 'card',
 	localeDidChange: false,
-	didSelectRaise: Em.computed.equal('selection', 1),
-	didSelectKeep: Em.computed.equal('selection', 0),
-	didSelectCut: Em.computed.equal('selection', -1),
+	didSelectRaise: Em.computed.equal('selection', "raise"),
+	didSelectKeep: Em.computed.equal('selection', "keep"),
+	didSelectCut: Em.computed.equal('selection', "cut"),
 	raisePrompt: function() {
 		return this.t("loc.youSpend", this.calcAmount(1));
 	}.on('init').property(),
@@ -48,7 +48,7 @@ export default Em.Object.extend({
 	
 	selectionDisplay: function() {
 		var operand = this.get('selection');
-		var locKey = (operand === 0) ? 'loc.keptFunding': (operand === -1) ? 'loc.reducedFunding' : 'loc.raisedFunding';
+		var locKey = (operand === "keep") ? 'loc.keptFunding': (operand === "cut") ? 'loc.reducedFunding' : 'loc.raisedFunding';
 		return this.t(locKey, this.calcAmount(operand));
 	}.on('init').property('selection'),
 
