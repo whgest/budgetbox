@@ -1,26 +1,25 @@
 <div class="container-fluid">
-
-	<div class="col-xs-12">
+	<div class="col-xs-12 align-objects">
 		<h3 class="pull-left">{{t "loc.landingPageHeader"}}</h3>
 		<div {{action "changeLocale"}} class="pull-right btn btn-link language-option">{{controllers.application.languageOption}}</div>
 	</div>
 
-	<div class="card-body col-xs-12">
-		{{t "whatServices.landing-page"}}
+	<div class="card-body col-xs-12 align-objects">
+		{{t "textBlockOne.landing-page"}}
 	</div>
 
-	<form class="landing-page-form col-xs-12">
+	<form class="landing-page-form col-xs-12 align-objects">
 		<div class="form-group">
-			<label for="zipCodeField">{{t "loc.zipCode"}}</label>			
+			<label for="zipCodeField">{{t "loc.zipCode"}}*</label>			
 			{{input class="form-control input-lg" elementId="zipCodeField" value=userResponseModel.zipCode}}
 		</div>	
 		<div class="form-group">
-			<label for="districtField">{{t "loc.districtLabel"}}</label>
+			<label for="districtField">{{t "loc.districtLabel"}}*</label>
 			<a class="pull-right btn btn-link district-option" {{bind-attr href=districtLinkout}} target="_blank">{{t "loc.findDistrict"}}</a>
 			{{view "select" class="form-control input-lg" prompt=districtPrompt elementId="districtField" content=districtOptions optionValuePath="content.districtNum" optionLabelPath="content.districtName" value=userResponseModel.district labelLoc="loc.zipCode"}}
 		</div>
 	</form>
-	<div class="col-xs-12">
+	<div class="col-xs-12 align-objects">
 		<button class="btn btn-primary" {{action "next"}}>{{t "loc.getStarted"}}</button>
 	</div>
 </div>

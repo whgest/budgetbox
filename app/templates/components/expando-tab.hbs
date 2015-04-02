@@ -1,6 +1,6 @@
-<div class="expando-tab col-xs-12" {{bind-attr data-target="hiddenElementIdFmt"}} data-toggle="collapse">
-  {{tabLabelLocalized}}
+<div class="expando-tab col-xs-12" {{bind-attr data-target="hiddenElementIdFmt"}} {{action "expando"}} data-toggle="collapse">
+  <span {{bind-attr class="caretClass :fa :icon-small :pull-right"}}></span>{{tabLabelLocalized}}
 </div>
-<div {{bind-attr id="hiddenElementId"}} class="collapse">
+<div {{bind-attr id="hiddenElementId"}} class="collapse col-xs-12">
 	<div class="expando-text">{{textContents}}</div>
 </div>

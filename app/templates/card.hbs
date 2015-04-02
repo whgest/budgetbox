@@ -1,27 +1,30 @@
-<div class="container">
+<div class="container-fluid">
 	<h3 class="col-xs-12 align-objects">{{model.displayedCard.cardTitle}}</h3>
-	{{expando-tab tabLabel="loc.whatServices" textContents=model.displayedCard.servicesTextString}}
-	{{expando-tab tabLabel="loc.servicesProvided" textContents=model.displayedCard.providedTextString}}
+	{{expando-tab tabLabel="loc.whatServices" textContents=model.displayedCard.textBlockOne}}
+	{{expando-tab tabLabel="loc.servicesProvided" textContents=model.displayedCard.textBlockTwo}}
 
 	<div class="col-xs-12 align-objects">		
 		<div {{bind-attr class=":user-option model.displayedCard.didSelectRaise:text-success"}}{{action "makeSelection" 1}}>
+			<div class="fa fa-long-arrow-up icon-large"></div>
 			<span class="option-text-small">{{t "loc.raiseFunding"}}</span><br>
 			<span class="option-text-large">{{model.displayedCard.raisePrompt}}</span>
 		</div>
 		
 		<div {{bind-attr class=":user-option model.displayedCard.didSelectKeep:text-warning"}}{{action "makeSelection" 0}}>
+			<div class="fa fa-long-arrow-right icon-large" style="margin:8px 7px 0 3px;"></div>
 			<span class="option-text-small">{{t "loc.keepFunding"}}</span><br>
 			<span class="option-text-large">{{model.displayedCard.keepPrompt}}</span>
 		</div>
 				
 		<div {{bind-attr class=":user-option model.displayedCard.didSelectCut:text-danger"}}{{action "makeSelection" -1}}>
+			<div class="fa fa-long-arrow-down icon-large"></div>
 			<span class="option-text-small">{{t "loc.cutFunding"}}</span><br>
 			<span class="option-text-large">{{model.displayedCard.cutPrompt}}</span>
 		</div>
 	</div>
 
 	<div class="col-xs-12 align-objects">
-		<button class="btn btn-default" {{action "previous"}}>{{t "loc.back"}}</button>
+		<button class="btn btn-default" {{action "previous"}}><span class="fa fa-long-arrow-left icon-small"></span>{{t "loc.back"}}</button>
 	</div>
 
 	<div class="app-footer col-xs-12">

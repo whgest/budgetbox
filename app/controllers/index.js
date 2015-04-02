@@ -9,6 +9,12 @@ export default Em.Controller.extend({
 	districtPrompt: function() {
 		return this.t("loc.districtPrompt");
 	}.property(),
+	agePrompt: function() {
+		return this.t("loc.agePrompt");
+	}.property(),
+	racePrompt: function() {
+		return this.t("loc.racePrompt");
+	}.property(),
 	districtOptions: function() {
 		var options = [], that=this;
 		for (var i=1; i<=10; ++i) {

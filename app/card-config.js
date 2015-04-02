@@ -1,6 +1,6 @@
 export default {
-	baseServicesLoc: "whatServices.%@",
-	baseProvidedLoc: "servicesProvided.%@",
+	baseBlockOneLoc: "textBlockOne.%@",
+	baseBlockTwoLoc: "textBlockTwo.%@",
 	baseTitleLoc: "cardTitle.%@",
 	baseShortTitleLoc: "cardShortTitle.%@",
 	baseImagePath: "assets/images/%@.png",
@@ -13,7 +13,8 @@ export default {
 		{
 			id: 'landing-page',
 			view: 'landingPage',
-			showResults: false
+			showResults: false,
+			textBlockTwo: 'null',
 		},
 		{
 			id: 'emergency-response',
@@ -42,7 +43,15 @@ export default {
 		{
 			id: 'results',
 			view: 'results',
-			showResults: false
+			showResults: false,
+			textBlockOne: '',
+			textBlockTwo: ''
 		},
+		{
+			id: 'feedback',
+			view: 'feedback',
+			showResults: false,			
+			textBlockTwo: ''
+		}
 	]
 };

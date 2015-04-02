@@ -1,17 +1,18 @@
-.container {
+.container-fluid {
 	background-color: white;
 	padding: 0;
+	margin: 0;
 }
 
 .app-header {
-	padding: 15px 15px 15px 45px;
+	padding: 15px 15px 15px 20px;
 	color: white;
 	background-color: black;
 	font-size: 16px;
 }
 
 .app-footer {
-	padding: 8px 15px 8px 15px;
+	padding: 8px 15px 8px 20px;
 	color: white;
 	background-color: black;
 	font-size: 14px;
@@ -19,6 +20,7 @@
 
 .language-option {
 	margin-top: 20px;	
+	padding-right:  0px;
 }
 
 .district-option {
@@ -53,7 +55,7 @@
 }
 
 .align-objects {
-	padding: 0 30px 0 30px;
+	padding: 0 20px 0 20px;
 }
 
 .user-option {
@@ -79,17 +81,32 @@
 	margin-left: -1500px;
 }
 
+.icon-small {
+	margin-right: 10px;
+}
+
+.icon-large {
+	margin: 8px 15px 0 10px;
+	font-size: 28px;
+	float: left;
+}
+
+.icon-gender {
+	text-align: center;
+	font-size: 20px;
+}
+
+.expando-container {
+	padding: 0;
+}
+
 .expando-tab {
 	background-color: lightgray;
 	color: black;
 	cursor: pointer;
-	padding: 12px;
+	padding: 12px 12px 12px 20px;
 	margin-bottom: 2px;
 	font-size: 16px;
-}
-
-.expando-text {
-	padding: 10px 30px 10px 30px;
 }
 
 .form-control {
@@ -104,16 +121,19 @@
 	font-size: 18px;
 }
 
+.text-box {
+	height: 125px;
+}
+
 .results-tab {
 	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
-	padding: 8px 30px 8px 30px;
+	padding: 8px 20px 8px 20px;
 	cursor: pointer;
 }
 
 .total-display {
 	margin-bottom: 20px;
-	padding: 8px 30px 8px 30px;
+	padding: 8px 20px 8px 20px;
 	color: black;
 	background-color: gray;
 	font-size: 14px;

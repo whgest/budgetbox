@@ -1,0 +1,32 @@
+<div class="container-fluid">
+
+	<div class="col-xs-12 align-objects">
+		<h3 class="pull-left">{{t "cardTitle.feedback"}}</h3>
+	</div>
+
+	<div class="card-body col-xs-12 align-objects">
+		{{t "textBlockOne.feedback"}}
+	</div>
+
+	<form class="landing-page-form col-xs-12 align-objects">
+{{!-- 		<div class="form-group">
+			<label>{{t "loc.yourGender"}}</label>			
+			{{gender-selector}}
+		</div>	 --}}
+		<div class="form-group">
+			<label for="raceField">{{t "loc.yourRace"}}</label>
+			{{view "select" class="form-control input-lg" prompt=racePrompt elementId="raceField" content=raceOptions value=userResponseModel.race}}
+		</div>
+		<div class="form-group">
+			<label for="ageField">{{t "loc.yourAge"}}</label>
+			{{view "select" class="form-control input-lg" prompt=agePrompt elementId="ageField" content=ageOptions value=userResponseModel.ageRange}}
+		</div>
+		<div class="form-group">
+			<label for="feedbackField">{{t "loc.yourExperience"}}</label>
+			{{input class="form-control input-lg text-box" elementId="feedbackField" value=userResponseModel.feedback}}
+		</div>
+	</form>
+	<div class="col-xs-12 align-objects">
+		<button class="btn btn-primary" {{action "postFeedback"}}>{{t "loc.submitFeedback"}}</button>
+	</div>
+</div>

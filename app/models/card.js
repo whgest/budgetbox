@@ -30,12 +30,12 @@ export default Em.Object.extend({
 		return CONFIG.baseImagePath.fmt(this.get('id')) || '';
 	}.on('init').property('localeDidChange'),
 
-	servicesTextString: function() {
-		return this.t(CONFIG.baseServicesLoc.fmt(this.get('id'))) || '';
+	textBlockOne: function() {
+		return this.t(CONFIG.baseBlockOneLoc.fmt(this.get('id'))) || '';
 	}.on('init').property('localeDidChange'),
 
-	providedTextString: function() {
-		return this.t(CONFIG.baseProvidedLoc.fmt(this.get('id'))) || '';
+	textBlockTwo: function() {
+		return this.t(CONFIG.baseBlockTwoLoc.fmt(this.get('id'))) || '';
 	}.on('init').property('localeDidChange'),
 
 	cardTitle: function() {

@@ -10,8 +10,8 @@ export default Em.Route.extend({
 	},
 	actions: {
 		postUserResponse: function() {
-			console.log(this.get('model').changedAttributes());
-			this.get('model').save();
+			//this.get('model').save();
+			this.controllerFor('index').send('next');
 		},
 		changeLocale: function() {
 			var that = this, 
