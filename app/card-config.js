@@ -1,4 +1,5 @@
 export default {
+	//devMode: true,
 	baseBlockOneLoc: "textBlockOne.%@",
 	baseBlockTwoLoc: "textBlockTwo.%@",
 	baseTitleLoc: "cardTitle.%@",

@@ -2,7 +2,7 @@
   "name": "budgetbox",
   "dependencies": {
     "jquery": "^1.11.1",
-    "ember": "1.10.0",
+    "ember": "1.11.0",
     "ember-data": "1.0.0-beta.12",
     "ember-resolver": "~0.1.11",
     "loader.js": "ember-cli/loader.js#1.0.1",
@@ -13,5 +13,8 @@
     "ember-qunit-notifications": "0.0.5",
     "qunit": "~1.17.1",
     "bootstrap": "~3.3.2"
+  },
+  "resolutions": {
+    "ember": "~1.11.0"
   }
 }

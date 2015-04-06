@@ -5,5 +5,6 @@ export default DS.Model.extend({
     comments: DS.attr('string'),
     race: DS.attr('string'),
     gender: DS.attr('string'),
-    referredBy: DS.attr('string')
+    referredBy: DS.attr('string'),
+    row: DS.attr('string')
 });

@@ -30,18 +30,8 @@ import DS from "ember-data";
 
 export default DS.Model.extend({
     postalCode: DS.attr('string'),
-    username: DS.attr('string'),
     referredBy: DS.attr('string'),
-    ageBracket: DS.attr('string'),
     district: DS.attr('string'),
-    changeEmergencyResponse: DS.attr('number'),
-    changParksLibraries: DS.attr('number'),
-    changeHealthHousing: DS.attr('number'),
-    changePlanningDevelopment: DS.attr('number'),
-    changeEnergy: DS.attr('number'),
-    changeWater: DS.attr('number'),
-    changeCleanCommunity: DS.attr('number'),
-    changeStreetsInfrastructure: DS.attr('number'),
     emergencyResponse: DS.attr('number'),
     parksLibraries: DS.attr('number'),
     healthHousing: DS.attr('number'),
@@ -51,9 +41,9 @@ export default DS.Model.extend({
     cleanCommunity: DS.attr('number'),
     streetsInfrastructure: DS.attr('number'),
     total: DS.attr('number'),
-    comments: DS.attr('string'),
     submitDate: DS.attr('date'),
-    getChangeProp: function(prop) {
-    	return "change" + Em.String.capitalize(prop);
-    }
+    row: DS.attr('string'),
+    // getChangeProp: function(prop) {
+    // 	return "change" + Em.String.capitalize(prop);
+    // }
 });

@@ -7,7 +7,7 @@ export default {
 		"raiseFunding": "Raise by 5%",
 		"keepFunding": "Maintain spending",
 		"cutFunding": "Lower by 5%",
-		"landingPageHeader": "Welcome!",
+
 		"getStarted": "Get started",
 		"district": "District",
 		"zipCode": "Your Zip Code",
@@ -30,10 +30,12 @@ export default {
 		"agePrompt": "Select your age range",
 		"racePrompt": "Select your race",
 		"yourExperience": "How was your Budget-In-A-Box experience?",
-		"submitFeedback": "Submit your feedback"
+		"submitFeedback": "Submit your feedback",
+		"invalidZipCode": "Please enter a 5 digit zip code."
 	},
 
 	"cardTitle": {
+		"landing-page": "Welcome!",
 		"emergency-response": "Emergency Services",
 		"parks-libraries": "Parks and Recreation",
 		"planning-development": "Planning and Development",

@@ -5,8 +5,10 @@ export default Em.Controller.extend({
 	needs: ['application'],
 	userResponseModel: null,
 	userFeedbackModel: null,
+	anim: "toRight",
 	displayedCardIndex: Em.computed.alias('model.displayedCard.index'),
 	districtLinkout: CONFIG.linkToDistrictMap,
+	socrataRow: null,
 	districtPrompt: function() {
 		return this.t("loc.districtPrompt");
 	}.property(),
@@ -24,6 +26,11 @@ export default Em.Controller.extend({
 		}
 		return options;
 	}.on('init').property(),
+
+	postalCodeIsValid: function() {
+		var zip = this.get('userResponseModel.postalCode');		
+		return (zip) ? zip.match(/[0-9]{5}/) : false;
+	}.property('userResponseModel.postalCode'),
 
 	transitionCard: function(cardIndex) {
 		var newCard = (cardIndex) ? this.get('model.allCards')[cardIndex] : this.get('model.allCards')[0];
@@ -47,6 +54,13 @@ export default Em.Controller.extend({
 	}.property('model.displayedCard'),
 
 	actions: {
+		submitLandingPage: function() {
+			if (!this.get('postalCodeIsValid') && !CONFIG.devMode) {
+				this.set('showZipValidation', true);
+			} else {
+				this.send('next');
+			}
+		},
 		next: function() {
 			var displayedCardIndex = this.get('displayedCardIndex'),
 				allCards = this.get('model.allCards'),
@@ -57,14 +71,19 @@ export default Em.Controller.extend({
 					break;
 				}
 			}
+			this.set('anim', 'toLeft');
 			this.transitionCard(nextCardNeedingSelection);
 		},
 		previous: function() {
 			this.transitionCard(this.get('displayedCardIndex') - 1);
+			this.set('anim', 'toRight');
 			
 		},
 		jumpToCard: function(cardIndex) {
 			this.transitionCard(cardIndex);
+			this.set('anim', 
+				(cardIndex > this.get('displayedCardIndex')) ? 'toLeft' : 'toRight'
+			);
 		},
 		makeSelection: function(operand) {
 			var propName = this.get('model.displayedCard.modelPropName'), 

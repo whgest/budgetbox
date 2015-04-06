@@ -1,5 +1,3 @@
-/* jshint jquery: true */
-
 import Em from "ember";
 
 export default Em.View.extend({
@@ -8,5 +6,5 @@ export default Em.View.extend({
 		Em.run.next(function() {
 			that.rerender();
 		});
-	}.observes('controller.controllers.application.localeDidChange')
+	}.observes('controller.controllers.application.localeDidChange'),
 });

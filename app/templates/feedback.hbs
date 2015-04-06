@@ -9,10 +9,10 @@
 	</div>
 
 	<form class="landing-page-form col-xs-12 align-objects">
-{{!-- 		<div class="form-group">
+		<div class="form-group">
 			<label>{{t "loc.yourGender"}}</label>			
-			{{gender-selector}}
-		</div>	 --}}
+			{{view "select" class="form-control input-lg" content=genderOptions value=userFeedbackModel.gender}}
+		</div>	
 		<div class="form-group">
 			<label for="raceField">{{t "loc.yourRace"}}</label>
 			{{view "select" class="form-control input-lg" prompt=racePrompt elementId="raceField" content=raceOptions value=userFeedbackModel.race}}

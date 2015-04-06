@@ -1,4 +1,5 @@
 import Em from "ember";
+import CONFIG from "../card-config";
 
 export default Em.Route.extend({
 	model: function() {
@@ -10,12 +11,20 @@ export default Em.Route.extend({
 		this.controllerFor('index').set('userFeedbackModel', this.store.createRecord('userFeedback', {id: 0}));
 	},
 	actions: {
-		postUserResponse: function() {
-			//this.get('model').save();
+		postUserResponse: function() {	
+			var that = this;		
+			this.set('controller.model.submitDate', new Date());
+			if(!CONFIG.devMode) {
+				this.get('controller.model').save().then(function(response) {
+					that.controllerFor('index').set('userFeedbackModel.row', response.get('row'));
+				});			
+			}			
 			this.controllerFor('index').send('next');
 		},
 		postFeedback: function() {
-			//this.get('model').save();
+			if(!CONFIG.devMode) {
+				this.controllerFor('index').get('userFeedbackModel').save();				
+			}
 			this.controllerFor('index').send('next');
 		},
 		changeLocale: function() {
