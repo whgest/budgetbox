@@ -8,24 +8,6 @@ export default Em.Controller.extend({
 	anim: "toRight",
 	displayedCardIndex: Em.computed.alias('model.displayedCard.index'),
 	districtLinkout: CONFIG.linkToDistrictMap,
-	socrataRow: null,
-	districtPrompt: function() {
-		return this.t("loc.districtPrompt");
-	}.property(),
-	agePrompt: function() {
-		return this.t("loc.agePrompt");
-	}.property(),
-	racePrompt: function() {
-		return this.t("loc.racePrompt");
-	}.property(),
-	districtOptions: function() {
-		var options = [], that=this;
-		for (var i=1; i<=10; ++i) {
-			var name = "%@ %@".fmt(that.t("loc.district"), i.toString());
-			options.push({"districtNum": i, "districtName": name});
-		}
-		return options;
-	}.on('init').property(),
 
 	postalCodeIsValid: function() {
 		var zip = this.get('userResponseModel.postalCode');		
@@ -34,8 +16,10 @@ export default Em.Controller.extend({
 
 	transitionCard: function(cardIndex) {
 		var newCard = (cardIndex) ? this.get('model.allCards')[cardIndex] : this.get('model.allCards')[0];
+		this.set('anim', 
+			(cardIndex > this.get('displayedCardIndex')) ? 'toLeft' : 'toRight'
+		);		
 		this.set('model.displayedCard', newCard);
-		this.send('renderCard', newCard);
 	},
 
 	localeDidChange: function() {
@@ -46,7 +30,7 @@ export default Em.Controller.extend({
 
 	footerString: function() {
 		var total = this.get('model.allCards').filterBy('showResults', true).length;
-		return this.t("loc.progress", this.get('model.displayedCard.index').toString(), total.toString());
+		return this.t('loc.progress', this.get('model.displayedCard.index').toString(), total.toString());
 	}.property('model.displayedCard'),
 
 	estimatedTotalText: function() {
@@ -61,6 +45,7 @@ export default Em.Controller.extend({
 				this.send('next');
 			}
 		},
+
 		next: function() {
 			var displayedCardIndex = this.get('displayedCardIndex'),
 				allCards = this.get('model.allCards'),
@@ -71,20 +56,17 @@ export default Em.Controller.extend({
 					break;
 				}
 			}
-			this.set('anim', 'toLeft');
 			this.transitionCard(nextCardNeedingSelection);
 		},
+
 		previous: function() {
-			this.transitionCard(this.get('displayedCardIndex') - 1);
-			this.set('anim', 'toRight');
-			
+			this.transitionCard(this.get('displayedCardIndex') - 1);			
 		},
+
 		jumpToCard: function(cardIndex) {
 			this.transitionCard(cardIndex);
-			this.set('anim', 
-				(cardIndex > this.get('displayedCardIndex')) ? 'toLeft' : 'toRight'
-			);
 		},
+
 		makeSelection: function(operand) {
 			var propName = this.get('model.displayedCard.modelPropName'), 
 				that = this;

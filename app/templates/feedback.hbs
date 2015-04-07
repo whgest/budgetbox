@@ -11,15 +11,15 @@
 	<form class="landing-page-form col-xs-12 align-objects">
 		<div class="form-group">
 			<label>{{t "loc.yourGender"}}</label>			
-			{{view "select" class="form-control input-lg" content=genderOptions value=userFeedbackModel.gender}}
+			{{view "select" class="form-control input-lg" prompt=view.genderPrompt content=view.genderOptions value=userFeedbackModel.gender}}
 		</div>	
 		<div class="form-group">
 			<label for="raceField">{{t "loc.yourRace"}}</label>
-			{{view "select" class="form-control input-lg" prompt=racePrompt elementId="raceField" content=raceOptions value=userFeedbackModel.race}}
+			{{view "select" class="form-control input-lg" prompt=view.racePrompt elementId="raceField" content=view.raceOptions value=userFeedbackModel.race}}
 		</div>
 		<div class="form-group">
 			<label for="ageField">{{t "loc.yourAge"}}</label>
-			{{view "select" class="form-control input-lg" prompt=agePrompt elementId="ageField" content=ageOptions value=userFeedbackModel.ageBracket}}
+			{{view "select" class="form-control input-lg" prompt=view.agePrompt elementId="ageField" content=view.ageOptions value=userFeedbackModel.ageBracket}}
 		</div>
 		<div class="form-group">
 			<label for="feedbackField">{{t "loc.yourExperience"}}</label>

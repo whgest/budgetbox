@@ -1,9 +1,5 @@
 export default {
-	//devMode: true,
-	baseBlockOneLoc: "textBlockOne.%@",
-	baseBlockTwoLoc: "textBlockTwo.%@",
-	baseTitleLoc: "cardTitle.%@",
-	baseShortTitleLoc: "cardShortTitle.%@",
+	devMode: true,
 	baseImagePath: "assets/images/%@.png",
 	percentChange: {"raise": 5, "keep": 0, "cut": -5},
 	linkToDistrictMap: "http://www.google.com",
@@ -15,13 +11,14 @@ export default {
 			id: 'landing-page',
 			view: 'landingPage',
 			showResults: false,
-			textBlockTwo: 'null',
 		},
 		{
 			id: 'emergency-response',
+			baseAmount: 50
 		},
 		{
-			id: 'parks-libraries'
+			id: 'parks-libraries',
+			baseAmount: 100
 		},
 		// {
 		// 	id: 'planning-development'
@@ -45,21 +42,16 @@ export default {
 			id: 'results',
 			view: 'results',
 			showResults: false,
-			textBlockOne: '',
-			textBlockTwo: ''
 		},
 		{
 			id: 'feedback',
 			view: 'feedback',
 			showResults: false,			
-			textBlockTwo: ''
 		},
 		{
 			id: 'resources',
 			view: 'resources',
 			showResults: false,			
-			textBlockOne: '',
-			textBlockTwo: ''
 		},
 
 	]

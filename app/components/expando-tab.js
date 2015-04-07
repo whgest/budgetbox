@@ -17,6 +17,9 @@ export default Em.Component.extend({
 	caretClass: function() {
 		return (this.get('isExpanded')) ? 'fa-caret-up': 'fa-caret-down';
 	}.property('isExpanded'),
+	locText: function() {
+		return this.t(this.get('textContents') + '.%@'.fmt(this.get('cardId')));
+	}.property(),
 	actions: {
 		expando: function() {
 			this.toggleProperty('isExpanded');

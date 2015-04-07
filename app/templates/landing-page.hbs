@@ -3,7 +3,6 @@
 		<h3 class="pull-left">{{t "cardTitle.landing-page"}}</h3>
 		<div {{action "changeLocale"}} class="pull-right btn btn-link language-option">{{controllers.application.languageOption}}</div>
 	</div>
-	<div {{action "postUserResponse"}}>Post Test</div>
 	<div class="card-body col-xs-12 align-objects">
 		{{t "textBlockOne.landing-page"}}
 	</div>
@@ -19,7 +18,7 @@
 		<div class="form-group">
 			<label for="districtField">{{t "loc.districtLabel"}}</label>
 			<a class="pull-right btn btn-link district-option" {{bind-attr href=districtLinkout}} target="_blank">{{t "loc.findDistrict"}}</a>
-			{{view "select" class="form-control input-lg" prompt=districtPrompt elementId="districtField" content=districtOptions optionValuePath="content.districtNum" optionLabelPath="content.districtName" value=userResponseModel.district}}
+			{{view "select" class="form-control input-lg" prompt=view.districtPrompt elementId="districtField" content=view.districtOptions optionValuePath="content.districtNum" optionLabelPath="content.districtName" value=userResponseModel.district}}
 		</div>
 	</form>
 	<div class="col-xs-12 align-objects">

@@ -4,23 +4,22 @@ import CONFIG from "../card-config";
 export default Em.Object.extend({
 	id: null,
 	index: 0,
-	isActive: false,
 	selection: null,
 	showResults: true,
 	view: 'card',
 	localeDidChange: false,
+	baseAmount: 0,
 	didSelectRaise: Em.computed.equal('selection', "raise"),
 	didSelectKeep: Em.computed.equal('selection', "keep"),
 	didSelectCut: Em.computed.equal('selection', "cut"),
-	raisePrompt: function() {
-		return this.t("loc.youSpend", this.calcAmount(1));
-	}.on('init').property(),
-	keepPrompt: function() {
-		return this.t("loc.youSpend", this.calcAmount(0));
-	}.on('init').property(),
-	cutPrompt: function() {
-		return this.t("loc.youSpend", this.calcAmount(-1));
-	}.on('init').property(),
+
+	setSpendPrompts: function() {
+		var that = this;
+		['raise', 'keep', 'cut'].forEach(function(operand) {
+			var prompt = that.t("loc.youSpend", that.calcAmount(operand));
+			that.set(operand + 'Prompt', prompt);
+		});		
+	}.observes('localeDidChange', 'baseAmount'),
 
 	modelPropName: function() {
 		return this.get('id').camelize();
@@ -28,23 +27,11 @@ export default Em.Object.extend({
 
 	imagePath: function() {
 		return CONFIG.baseImagePath.fmt(this.get('id')) || '';
-	}.on('init').property('localeDidChange'),
-
-	textBlockOne: function() {
-		return this.t(CONFIG.baseBlockOneLoc.fmt(this.get('id'))) || '';
-	}.on('init').property('localeDidChange'),
-
-	textBlockTwo: function() {
-		return this.t(CONFIG.baseBlockTwoLoc.fmt(this.get('id'))) || '';
-	}.on('init').property('localeDidChange'),
+	}.on('init'),
 
 	cardTitle: function() {
-		return this.t(CONFIG.baseTitleLoc.fmt(this.get('id'))) || '';
+		return this.t('cardTitle.%@'.fmt(this.get('id'))) || '';
 	}.on('init').property('localeDidChange'),
-
-	// cardShortTitle: function() {
-	// 	return this.t(CONFIG.baseShortTitleLoc.fmt(this.get('id'))) || '';
-	// }.on('init').property('localeDidChange'),
 	
 	selectionDisplay: function() {
 		var operand = this.get('selection');
@@ -53,6 +40,9 @@ export default Em.Object.extend({
 	}.on('init').property('selection'),
 
 	calcAmount: function(operand) {
-		return '0';
+		var multiplier = CONFIG.percentChange[operand] / 100,
+			amount = Math.round(this.get('baseAmount')  * (1 + multiplier));
+
+		return amount;
 	}
 });

@@ -7,13 +7,12 @@ export default {
 		"raiseFunding": "Raise by 5%",
 		"keepFunding": "Maintain spending",
 		"cutFunding": "Lower by 5%",
-
 		"getStarted": "Get started",
 		"district": "District",
 		"zipCode": "Your Zip Code",
-		"districtLabel":"Your Council District",
-		"districtPrompt":"Select your district",
-		"findDistrict":"find your district",
+		"districtLabel": "Your Council District",
+		"districtPrompt": "Select your district",
+		"findDistrict": "find your district",
 		"resultsHeader": "Review your choices",
 		"youSpend": "You spend $%@/yr",
 		"whatServices": "What services are included?",
@@ -27,8 +26,9 @@ export default {
 		"yourGender": "Your gender",
 		"yourRace": "Your race",
 		"yourAge": "Your age range",
-		"agePrompt": "Select your age range",
-		"racePrompt": "Select your race",
+		"genderPrompt": "Prefer not to answer",
+		"agePrompt": "Prefer not to answer",
+		"racePrompt": "Prefer not to answer",
 		"yourExperience": "How was your Budget-In-A-Box experience?",
 		"submitFeedback": "Submit your feedback",
 		"invalidZipCode": "Please enter a 5 digit zip code."
@@ -47,17 +47,6 @@ export default {
 		"feedback": "Thank you!",
 		"resources": "Find more budget resources:"
 	},
-
-	// "cardShortTitle": {
-	// 	"emergency-response": "Emergency",
-	// 	"parks-libraries": "Parks",
-	// 	"planning-development": "Planning",
-	// 	"energy": "",
-	// 	"health-housing": "",
-	// 	"water": "",
-	// 	"clean-community": "",
-	// 	"streets-infrastructure": ""
-	// },
 
 	"textBlockOne": {
 		"landing-page": "Jean shorts Intelligentsia plaid, cardigan hashtag Godard letterpress fap yr sustainable you probably haven't heard of them crucifix Etsy tattooed mumblecore. Etsy plaid 8-bit pork belly dreamcatcher, gentrify Tumblr typewriter salvia before they sold out four dollar toast umami Pitchfork bitters viral. Kogi mlkshk flannel next level gluten-free PBR lumbersexual. Bicycle rights biodiesel kale chips DIY 8-bit post-ironic. Dreamcatcher ethical before they sold out hella. Try-hard Blue Bottle kogi, 90's photo booth YOLO seitan High Life cronut wayfarers flannel. Kickstarter seitan biodiesel PBR drinking vinegar Echo Park, actually photo booth.",

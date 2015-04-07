@@ -22,8 +22,9 @@ export default Em.Route.extend({
 			this.controllerFor('index').send('next');
 		},
 		postFeedback: function() {
-			if(!CONFIG.devMode) {
-				this.controllerFor('index').get('userFeedbackModel').save();				
+			var userFeedbackModel = this.controllerFor('index').get('userFeedbackModel');
+			if(!CONFIG.devMode && userFeedbackModel.get('row')) {
+				userFeedbackModel.save();				
 			}
 			this.controllerFor('index').send('next');
 		},
