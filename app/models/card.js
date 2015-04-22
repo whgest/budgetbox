@@ -33,11 +33,10 @@ export default Em.Object.extend({
 		return this.t('cardTitle.%@'.fmt(this.get('id'))) || '';
 	}.on('init').property('localeDidChange'),
 	
-	selectionDisplay: function() {
+	selectedAmount: function() {
 		var operand = this.get('selection');
-		var locKey = (operand === "keep") ? 'loc.keptFunding': (operand === "cut") ? 'loc.reducedFunding' : 'loc.raisedFunding';
-		return this.t(locKey, this.calcAmount(operand));
-	}.on('init').property('selection'),
+		return this.calcAmount(operand);	
+	}.property('selection'),
 
 	calcAmount: function(operand) {
 		var multiplier = CONFIG.percentChange[operand] / 100,

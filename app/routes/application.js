@@ -14,6 +14,9 @@ export default Em.Route.extend({
 		postUserResponse: function() {	
 			var that = this;		
 			this.set('controller.model.submitDate', new Date());
+			this.set('controller.model.browserName', this.get('controller.browser.name'));
+			this.set('controller.model.browserVersion', this.get('controller.browser.version'));
+
 			if(!CONFIG.devMode) {
 				this.get('controller.model').save().then(function(response) {
 					that.controllerFor('index').set('userFeedbackModel.row', response.get('row'));
@@ -33,8 +36,8 @@ export default Em.Route.extend({
 				application = this.container.lookup('application:main'),
 				newLocale = (this.get('controller.selectedLocale') === "en") ? "es" : "en";
 
-			Em.set(this.controller, 'selectedLocale', newLocale);
-			Em.set(application, 'locale', newLocale);
+			this.controller.set('selectedLocale', newLocale);
+			application.set('locale', newLocale);
 			Em.run.next(function() {
 				that.controller.toggleProperty('localeDidChange');
 			});

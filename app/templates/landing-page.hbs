@@ -1,27 +1,32 @@
-<div class="container-fluid">
-	<div class="col-xs-12 align-objects">
-		<h3 class="pull-left">{{t "cardTitle.landing-page"}}</h3>
-		<div {{action "changeLocale"}} class="pull-right btn btn-link language-option">{{controllers.application.languageOption}}</div>
-	</div>
-	<div class="card-body col-xs-12 align-objects">
-		{{t "textBlockOne.landing-page"}}
-	</div>
-
-	<form class="landing-page-form col-xs-12 align-objects">
-		<div class="form-group">
-			<label for="zipCodeField">{{t "loc.zipCode"}}*</label>			
-			{{input class="form-control input-lg" type="text" maxlength=5 elementId="zipCodeField" value=userResponseModel.postalCode}}
-			{{#liquid-if showZipValidation use="toDown"}}
-				<div class="validation-msg">*{{t "loc.invalidZipCode"}}</div>
-			{{/liquid-if}}
-		</div>	
-		<div class="form-group">
-			<label for="districtField">{{t "loc.districtLabel"}}</label>
-			<a class="pull-right btn btn-link district-option" {{bind-attr href=districtLinkout}} target="_blank">{{t "loc.findDistrict"}}</a>
-			{{view "select" class="form-control input-lg" prompt=view.districtPrompt elementId="districtField" content=view.districtOptions optionValuePath="content.districtNum" optionLabelPath="content.districtName" value=userResponseModel.district}}
+<div class="container">
+	<div class="col-xs-12 col-md-8 col-md-offset-2">
+		<div class="col-xs-12">
+			<h3 class="pull-left">{{t "cardTitle.landing-page"}}</h3>
+			<div {{action "changeLocale"}} class="pull-right btn btn-link language-option">{{controllers.application.languageOption}}</div>
 		</div>
-	</form>
-	<div class="col-xs-12 align-objects">
-		<button class="btn btn-primary" {{action "submitLandingPage"}}>{{t "loc.getStarted"}}</button>
+		<div class="card-body col-xs-12 col-md-7">
+			{{t "textBlockOne.landing-page"}}
+		</div>
+
+		<form class="landing-page-form col-xs-12 col-md-5">
+			<div class="form-group">
+				<label for="zipCodeField">{{t "loc.zipCode"}}*</label>			
+				{{input class="form-control input-lg" type="text" maxlength=5 elementId="zipCodeField" value=userResponseModel.postalCode}}
+				{{#liquid-if showZipValidation use="toDown"}}
+					<div class="validation-msg">*{{t "loc.invalidZipCode"}}</div>
+				{{/liquid-if}}
+			</div>	
+			<div class="form-group">
+				<label for="districtField">{{t "loc.districtLabel"}}*</label>
+				<a class="pull-right btn btn-link district-option" {{bind-attr href=districtLinkout}} target="_blank">{{t "loc.findDistrict"}}</a>
+				{{view "select" class="form-control input-lg" prompt=view.districtPrompt elementId="districtField" content=view.districtOptions optionValuePath="content.districtNum" optionLabelPath="content.districtName" value=userResponseModel.district}}
+				{{#liquid-if showDistrictValidation use="toDown"}}
+					<div class="validation-msg">*{{t "loc.invalidDistrict"}}</div>
+				{{/liquid-if}}
+			</div>
+			<div class="col-xs-12" style="margin-top: 20px;">
+				<button class="btn btn-primary" {{action "submitLandingPage"}}>{{t "loc.getStarted"}}</button>
+			</div>
+		</form>
 	</div>
 </div>

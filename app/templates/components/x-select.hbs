@@ -1,0 +1,11 @@
+<div class="form-group">
+	<label {{bind-attr for="elementId"}}>{{label}}{{#if showValidation}}*{{/if}}</label>
+	{{#if linkoutHref}}
+		<a class="pull-right btn btn-link district-option" {{bind-attr href=linkoutHref}} target="_blank">{{linkoutText}}</a>
+	{{/if}}
+	{{view "select" class="form-control input-lg" elementId=elementId prompt=prompt content=content optionValuePath=optionValuePath optionLabelPath=optionLabelPath value=value}}
+
+	{{#liquid-if showValidation use="toDown"}}
+		<div class="validation-msg">*{{validationMsg}}</div>
+	{{/liquid-if}}
+</div>

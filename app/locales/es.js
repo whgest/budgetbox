@@ -29,6 +29,7 @@ export default {
 		"yourAge": "spanish",
 		"agePrompt": "spanish",
 		"racePrompt": "spanish",
+		"genderPrompt": "spanish",
 		"yourExperience": "spanish",
 		"submitFeedback": "spanish",
 		"invalidZipCode": "spanish"

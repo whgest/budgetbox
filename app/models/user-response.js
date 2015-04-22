@@ -15,6 +15,8 @@ export default DS.Model.extend({
     total: DS.attr('number'),
     submitDate: DS.attr('date'),
     row: DS.attr('string'),
+    browserName: DS.attr('string'),
+    browserVersion: DS.attr('string')
     // getChangeProp: function(prop) {
     // 	return "change" + Em.String.capitalize(prop);
     // }

@@ -4,6 +4,7 @@ export default {
 		"back": "Back",
 		"return": "Back to Start",
 		"start": "Start",
+		"edit": "Edit",
 		"raiseFunding": "Raise by 5%",
 		"keepFunding": "Maintain spending",
 		"cutFunding": "Lower by 5%",
@@ -18,7 +19,8 @@ export default {
 		"whatServices": "What services are included?",
 		"servicesProvided": "2014: Services provided",
 		"progress": "Progress: %@ of %@",
-		"estTotal": "Estimated annual total: $%@",
+		"estTotal": "Your total: $%@",
+		"baseTotal": "Current total: $%@",
 		"submit": "Submit your budget choices",
 		"raisedFunding": "Raise budget spending ($%@)",
 		"keptFunding": "Maintain budget spending ($%@)",
@@ -31,7 +33,19 @@ export default {
 		"racePrompt": "Prefer not to answer",
 		"yourExperience": "How was your Budget-In-A-Box experience?",
 		"submitFeedback": "Submit your feedback",
-		"invalidZipCode": "Please enter a 5 digit zip code."
+		"invalidZipCode": "Please enter a 5 digit zip code.",
+		"invalidDistrict": "Please select your district.",
+		"dontKnowDistrict": "I don't know",
+		"yourEmail": "Your email address",
+		"youRaised": "You raised to: $%@",
+		"youLowered": "You lowered to: $%@",
+		"currentPay": "Previously: $%@",
+		"youKept": "You kept spending at: $%@",
+		"totals": "Totals",
+		"choiceHeader": "Your Choice",
+		"currentHeader": "Current Rate",
+		"category": "Category",
+		"shareWith": "Share Budget-In-A-Box with friends and family"
 	},
 
 	"cardTitle": {

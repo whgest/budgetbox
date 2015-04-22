@@ -1,5 +1,15 @@
-<div {{bind-attr class="card.selection :pull-left"}}>
-	<div class="option-text-large">{{title}}</div>
-	<span {{bind-attr class="iconClass :fa :icon-small"}}></span><span class="option-text-small">{{selectionText}}</span>
+<div class="row">
+	<div class="option-text-large col-xs-10 col-sm-7">{{title}}</div>
+
+	<div class="option-text-large hidden-xs col-sm-2">${{card.selectedAmount}}</div>	
+	<div class="option-text-large keep hidden-xs col-sm-2">${{card.baseAmount}}</div>	
+
+	<div class="col-xs-2 col-sm-1 edit-choice">{{t "loc.edit"}}</div>
 </div>
-<div class="pull-right fa fa-pencil icon-small" style="margin-top:15px;"></div>
+
+<div class="option-text-small col-xs-12 visible-xs-block">
+	<div {{bind-attr class="currentPayText:col-xs-7:col-xs-12"}} style="padding-left: 0;"><span {{bind-attr class="iconClass :fa :icon-small"}} style="margin-right: 10px;"></span><span>{{selectionText}}</span></div>
+	{{#if currentPayText}}
+		<div class="keep col-xs-5" style="text-align:right; padding-right:0;">{{currentPayText}}</div>
+	{{/if}}
+</div>

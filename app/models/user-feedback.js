@@ -6,5 +6,6 @@ export default DS.Model.extend({
     race: DS.attr('string'),
     gender: DS.attr('string'),
     referredBy: DS.attr('string'),
+    email: DS.attr('string'),
     row: DS.attr('string')
 });

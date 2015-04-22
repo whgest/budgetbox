@@ -1,6 +1,13 @@
-<div class="expando-tab col-xs-12" {{bind-attr data-target="hiddenElementIdFmt"}} {{action "expando"}} data-toggle="collapse">
-  <span {{bind-attr class="caretClass :fa :icon-small :pull-right"}}></span>{{tabLabelLocalized}}
+<div class="expando-tab visible-xs-block col-xs-12" {{bind-attr data-target="hiddenElementIdFmt"}} {{action "expando"}} data-toggle="collapse">
+  <span {{bind-attr class="caretClass :fa :icon-small :pull-right"}}></span>
+  <span class="expando-label">{{tabLabelLocalized}}</span>
 </div>
 <div {{bind-attr id="hiddenElementId"}} class="collapse col-xs-12">
+	<div class="expando-text visible-xs-block">{{locText}}</div>
+</div>
+
+{{!-- on non-phones dont do the expando thing, just display --}}
+<div class="hidden-xs col-xs-12" style="margin-bottom: 20px;">
+	<div class="expando-label">{{tabLabelLocalized}}</div>
 	<div class="expando-text">{{locText}}</div>
 </div>

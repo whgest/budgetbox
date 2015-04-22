@@ -1,12 +1,29 @@
-<div class="container-fluid">
-	<h3 class="col-xs-12 align-objects">{{t "loc.resultsHeader"}}</h3>
-	{{#each card in model.allCards}}
-		{{#if card.showResults}}
-			{{results-tab card=card action="jumpToCard"}}
-		{{/if}}
-	{{/each}}
-	<div class="total-display col-xs-12 align-objects">{{estimatedTotalText}}</div>
-	<div class="col-xs-12 align-objects">
-		<button class="btn btn-primary" {{action "postUserResponse"}}>{{t "loc.submit"}}</button>
+<div class="container">
+	<h3 class="col-xs-12 col-md-offset-2 align-objects">{{t "loc.resultsHeader"}}</h3>
+	<div class="col-xs-12 col-md-8 col-md-offset-2 no-gutter-phone" style="margin-top: 20px;">
+		<div class="hidden-xs col-sm-12 results-header">
+			<div class="col-sm-7">{{t "loc.category"}}</div>
+			<div class="col-sm-2">{{t "loc.choiceHeader"}}</div>
+			<div class="col-sm-2">{{t "loc.currentHeader"}}</div>
+		</div>
+		{{#each card in model.allCards}}
+			{{#if card.showResults}}
+				{{results-tab card=card action="jumpToCard"}}
+			{{/if}}
+		{{/each}}
+
+		<div class="total-display col-xs-12 hidden-xs">
+			<div class="col-sm-7">{{t "loc.totals"}}</div>
+			<div {{bind-attr class="totalClass :col-sm-2"}}>${{estimatedTotal}}</div>
+			<div class="col-sm-2">${{currentPay}}</div>
+		</div>
+
+		<div class="total-display col-xs-12 visible-xs-block">
+			<div {{bind-attr class="totalClass :col-xs-6"}}>{{estimatedTotalText}}</div>
+			<div class="col-xs-6 text-right">{{currentPayText}}</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 pull-right" style="margin-top: 20px;">
+			<button class="btn btn-primary" {{action "postUserResponse"}}>{{t "loc.submit"}}</button>
+		</div>
 	</div>
 </div>

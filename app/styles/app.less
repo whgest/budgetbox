@@ -1,3 +1,10 @@
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-sm-max: 991px;
+@screen-md-min: 992px;
+@screen-md-max: 1199px;
+@screen-lg-min: 1200px;
+
 @header-color: black;
 @header-text: white;
 
@@ -13,12 +20,11 @@
 @keep-text-selected: white;
 @cut-text-selected: white;
 
+@table-header: darkgray;
 
-
-.container-fluid {
+.container {
 	background-color: white;
 	padding: 0;
-	margin: 0;
 }
 
 .app-header {
@@ -33,6 +39,10 @@
 	color: @header-text;
 	background-color: @header-color;
 	font-size: 14px;
+	@media (min-width: @screen-sm-min) {
+		font-size: 16px;
+		padding: 15px;	
+	}
 }
 
 .language-option {
@@ -46,6 +56,7 @@
 
 .card-body {
 	font-size: 13px;
+	margin-bottom: 30px;
 }
 
 .btn-primary {
@@ -113,7 +124,6 @@
 }
 
 .landing-page-form {
-	margin-top: 30px;
 	margin-bottom: 20px;
 }
 
@@ -127,7 +137,7 @@
 }
 
 .icon-small {
-	margin-right: 10px;
+	padding-left: 0px;
 }
 
 .icon-large {
@@ -136,20 +146,27 @@
 	float: left;
 }
 
-.icon-gender {
-	text-align: center;
-	font-size: 20px;
-}
-
 .expando-container {
 	padding: 0;
+}
+
+.no-gutter-phone {
+	padding-left: 0;
+	padding-right: 0;
+	@media (min-width: @screen-sm-min) {
+		padding-left: inherit;
+		padding-right: inherit;
+	}
 }
 
 .expando-tab {
 	background-color: lightgray;
 	cursor: pointer;
 	padding: 12px 12px 12px 20px;
-	margin-bottom: 2px;
+	margin-bottom: 2px;	
+}
+
+.expando-label {
 	font-size: 16px;
 }
 
@@ -173,17 +190,40 @@
 	white-space: pre-line;
 }
 
+.edit-choice {
+	text-align: right;
+	color: black;
+	@media (min-width: @screen-sm-min) {
+		cursor: pointer;
+		font-size: 14px;
+		text-decoration: underline;
+		color: @link-color;
+	}
+}
+
 .results-tab {
 	border-top: 1px solid gray;
-	padding: 8px 20px 8px 20px;
-	cursor: pointer;
+	padding: 10px;	
+	@media (min-width: @screen-sm-min) {
+		border: 1px solid black;
+		cursor: pointer;
+		font-size: 16px;
+		padding: 15px;	
+	}
+}
+
+.results-header {
+	background-color: @table-header;
+	font-size: 16px;
+	border: 1px solid black;
+	padding: 7px 0 7px 0;
 }
 
 .total-display {
-	margin-bottom: 20px;
-	padding: 8px 20px 8px 20px;
+	padding: 8px 10px 8px 10px;
 	background-color: lightgray;
-	font-size: 14px;
+	font-size: 18px;
+	@media (min-width: @screen-sm-min) {border: 1px solid black;}
 }
 
 label {

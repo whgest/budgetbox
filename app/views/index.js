@@ -21,6 +21,7 @@ export default Em.View.extend({
 			var name = "%@ %@".fmt(that.t("loc.district"), i.toString());
 			options.push({"districtNum": i, "districtName": name});
 		}
+		options.push({"districtNum": -1, "districtName": this.t("loc.dontKnowDistrict")});
 		return options;
 	}.on('init').property('localeDidChange'),
 

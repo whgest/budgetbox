@@ -1,32 +1,41 @@
-<div class="container-fluid">
-
-	<div class="col-xs-12 align-objects">
-		<h3 class="pull-left">{{t "cardTitle.feedback"}}</h3>
-	</div>
-
-	<div class="card-body col-xs-12 align-objects">
-		{{t "textBlockOne.feedback"}}
-	</div>
-
-	<form class="landing-page-form col-xs-12 align-objects">
-		<div class="form-group">
-			<label>{{t "loc.yourGender"}}</label>			
-			{{view "select" class="form-control input-lg" prompt=view.genderPrompt content=view.genderOptions value=userFeedbackModel.gender}}
-		</div>	
-		<div class="form-group">
-			<label for="raceField">{{t "loc.yourRace"}}</label>
-			{{view "select" class="form-control input-lg" prompt=view.racePrompt elementId="raceField" content=view.raceOptions value=userFeedbackModel.race}}
+<div class="container">
+	<div class="col-xs-12 col-md-8 col-md-offset-2">
+		<div class="col-xs-12">
+			<h3 class="pull-left">{{t "cardTitle.feedback"}}</h3>
 		</div>
-		<div class="form-group">
-			<label for="ageField">{{t "loc.yourAge"}}</label>
-			{{view "select" class="form-control input-lg" prompt=view.agePrompt elementId="ageField" content=view.ageOptions value=userFeedbackModel.ageBracket}}
+
+		<div class="card-body col-xs-12">
+			{{t "textBlockOne.feedback"}}
 		</div>
-		<div class="form-group">
-			<label for="feedbackField">{{t "loc.yourExperience"}}</label>
-			{{textarea class="form-control input-lg text-box" elementId="feedbackField" value=userFeedbackModel.comments}}
+
+		<form class="landing-page-form col-xs-12">
+			<div class="form-group">
+				<label for="emailField">{{t "loc.yourEmail"}}</label>			
+				{{input class="form-control input-lg" type="text" maxlength=50 elementId="emailField" value=userResponseModel.email}}
+			</div>	
+			<div class="form-group">
+				<label>{{t "loc.yourGender"}}</label>			
+				{{view "select" class="form-control input-lg" prompt=view.genderPrompt content=view.genderOptions value=userFeedbackModel.gender}}
+			</div>	
+			<div class="form-group">
+				<label for="raceField">{{t "loc.yourRace"}}</label>
+				{{view "select" class="form-control input-lg" prompt=view.racePrompt elementId="raceField" content=view.raceOptions value=userFeedbackModel.race}}
+			</div>
+			<div class="form-group">
+				<label for="ageField">{{t "loc.yourAge"}}</label>
+				{{view "select" class="form-control input-lg" prompt=view.agePrompt elementId="ageField" content=view.ageOptions value=userFeedbackModel.ageBracket}}
+			</div>
+			<div class="form-group">
+				<label for="feedbackField">{{t "loc.yourExperience"}}</label>
+				{{textarea class="form-control input-lg text-box" elementId="feedbackField" value=userFeedbackModel.comments}}
+			</div>
+		</form>
+		<div class="col-xs-12">
+			<h3>{{t "loc.shareWith"}}</h3>
+			{{social-media-bar}}
 		</div>
-	</form>
-	<div class="col-xs-12 align-objects">
-		<button class="btn btn-primary" {{action "postFeedback"}}>{{t "loc.submitFeedback"}}</button>
+		<div class="col-xs-12" style="margin-top: 20px;">
+			<button class="btn btn-primary" {{action "postFeedback"}}>{{t "loc.submitFeedback"}}</button>
+		</div>
 	</div>
 </div>
