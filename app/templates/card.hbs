@@ -1,14 +1,14 @@
 <div class="container">
-	<div class="col-xs-12 col-md-8 col-md-offset-2">
+	<div class="col-xs-12">
 		<h3 class="col-xs-12" style="padding-left: 0;">{{card.cardTitle}}</h3>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-7 no-gutter-phone">
+			<div class="col-xs-12 col-sm-7 no-gutter-phone">
 				{{expando-tab tabLabel="loc.whatServices" textContents="textBlockOne" cardId=card.id}}
 				{{expando-tab tabLabel="loc.servicesProvided" textContents="textBlockTwo" cardId=card.id}}
 			</div>
 
-			<div class="col-xs-12 col-md-5">		
+			<div class="col-xs-12 col-sm-5">		
 				<div {{bind-attr class=":user-option :raise card.didSelectRaise:selected"}}{{action "makeSelection" "raise"}}>
 					<div class="fa fa-long-arrow-up icon-large"></div>
 					<span class="option-text-small">{{t "loc.raiseFunding"}}</span><br>
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-12 col-md-7 pull-left">
+		<div class="col-xs-12 col-sm-7 pull-left">
 			<button class="btn btn-default" {{action "previous"}}><span class="fa fa-long-arrow-left icon-small"></span>{{t "loc.back"}}</button>
 		</div>
 	</div>

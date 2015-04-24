@@ -22,9 +22,14 @@
 
 @table-header: darkgray;
 
+@container-max-width: 750px;
+
 .container {
 	background-color: white;
 	padding: 0;
+	@media (min-width: @screen-sm-min) {
+		max-width: @container-max-width;
+	}
 }
 
 .app-header {
