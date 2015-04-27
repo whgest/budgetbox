@@ -25,10 +25,6 @@ export default Em.Object.extend({
 		return this.get('id').camelize();
 	}.on('init').property(),
 
-	imagePath: function() {
-		return CONFIG.baseImagePath.fmt(this.get('id')) || '';
-	}.on('init'),
-
 	cardTitle: function() {
 		return this.t('cardTitle.%@'.fmt(this.get('id'))) || '';
 	}.on('init').property('localeDidChange'),

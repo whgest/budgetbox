@@ -1,6 +1,5 @@
 export default {
 	devMode: true,
-	baseImagePath: "assets/images/%@.png",
 	percentChange: {"raise": 5, "keep": 0, "cut": -5},
 	linkToDistrictMap: "http://www.google.com",
 	transitionDelay: 300,

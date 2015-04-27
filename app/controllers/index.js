@@ -8,6 +8,7 @@ export default Em.Controller.extend({
 	anim: "toRight",
 	displayedCardIndex: Em.computed.alias('model.displayedCard.index'),
 	districtLinkout: CONFIG.linkToDistrictMap,
+	isTransitioning: false,
 
 	postalCodeIsValid: function() {
 		var zip = this.get('userResponseModel.postalCode');		
@@ -19,13 +20,18 @@ export default Em.Controller.extend({
 		return !!district;
 	}.property('userResponseModel.district'),
 
-	transitionCard: function(cardIndex) {
-		var newCard = (cardIndex) ? this.get('model.allCards')[cardIndex] : this.get('model.allCards')[0];
-		this.set('anim', 
-			(cardIndex > this.get('displayedCardIndex')) ? 'toLeft' : 'toRight'
-		);		
-		this.set('model.displayedCard', newCard);
-		window.scrollTo(0, 0);
+	transitionCard: function(cardIndex) {		
+		var newCard = (cardIndex) ? this.get('model.allCards')[cardIndex] : this.get('model.allCards')[0],
+			that = this;
+		if (!this.get('isTransitioning')) {
+			this.set('isTransitioning', true);
+			this.set('anim', 
+				(cardIndex > this.get('displayedCardIndex')) ? 'toLeft' : 'toRight'
+			);		
+			this.set('model.displayedCard', newCard);
+			window.scrollTo(0, 0);
+			Em.run.later(function() {that.set('isTransitioning', false);}, 500);
+		}
 	},
 
 	localeDidChange: function() {
