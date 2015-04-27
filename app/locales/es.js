@@ -36,8 +36,8 @@ export default {
 	},
 
 	"cardTitle": {
-		"landing-page": "spanish",
-		"emergency-response": "spanish",
+		"welcome": "spanish",
+		"emergency-services": "spanish",
 		"parks-libraries": "spanish",
 		"planning-development": "spanish",
 		"health-housing": "spanish",
@@ -50,8 +50,8 @@ export default {
 	},
 
 	"textBlockOne": {
-		"landing-page": "spanish",
-		"emergency-response": "spanish",
+		"welcome": "spanish",
+		"emergency-services": "spanish",
 		"parks-libraries": "spanish",
 		"planning-development": "spanish",
 		"energy": "spanish",
@@ -63,7 +63,7 @@ export default {
 	},
 
 	"textBlockTwo": {
-		"emergency-response": "spanish",
+		"emergency-services": "spanish",
 		"parks-libraries": "spanish",
 	}
 

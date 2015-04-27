@@ -6,6 +6,7 @@ export default Em.Controller.extend({
         return (this.get('selectedLocale') === 'en') ? 'español' : 'english';
     }.property('selectedLocale'),
     localeDidChange: false,
+    sessionIsActive: false,
     //not mine vvv
     browser: function() {
         var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 

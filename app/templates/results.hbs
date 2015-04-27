@@ -6,7 +6,7 @@
 			<div class="col-sm-2">{{t "loc.choiceHeader"}}</div>
 			<div class="col-sm-2">{{t "loc.currentHeader"}}</div>
 		</div>
-		{{#each card in model.allCards}}
+		{{#each card in allCards}}
 			{{#if card.showResults}}
 				{{results-tab card=card action="jumpToCard"}}
 			{{/if}}

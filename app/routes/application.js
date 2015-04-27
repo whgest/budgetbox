@@ -2,34 +2,30 @@ import Em from "ember";
 import CONFIG from "../card-config";
 
 export default Em.Route.extend({
-	model: function() {
-		return this.store.createRecord('userResponse', {id: 0});
-	},
-	setupController: function(controller, model) {
-		this._super(controller, model);
-		this.controllerFor('index').set('userResponseModel', this.get('controller.model'));
-		this.controllerFor('index').set('userFeedbackModel', this.store.createRecord('userFeedback', {id: 0}));
+	setupController: function(controller) {
+		controller.set('userResponseModel', this.store.createRecord('userResponse', {id: 0}));
+		controller.set('userFeedbackModel', this.store.createRecord('userFeedback', {id: 0}));
 	},
 	actions: {
 		postUserResponse: function() {	
 			var that = this;		
-			this.set('controller.model.submitDate', new Date());
-			this.set('controller.model.browserName', this.get('controller.browser.name'));
-			this.set('controller.model.browserVersion', this.get('controller.browser.version'));
+			this.set('controller.userResponseModel.submitDate', new Date());
+			this.set('controller.userResponseModel.browserName', this.get('controller.browser.name'));
+			this.set('controller.userResponseModel.browserVersion', this.get('controller.browser.version'));
 
 			if(!CONFIG.devMode) {
-				this.get('controller.model').save().then(function(response) {
-					that.controllerFor('index').set('userFeedbackModel.row', response.get('row'));
+				this.get('controller.userResponseModel').save().then(function(response) {
+					that.controller.set('userFeedbackModel.row', response.get('row'));
 				});			
 			}			
-			this.controllerFor('index').send('next');
+			this.controllerFor('showCard').send('next');
 		},
 		postFeedback: function() {
-			var userFeedbackModel = this.controllerFor('index').get('userFeedbackModel');
+			var userFeedbackModel = this.controller.get('userFeedbackModel');
 			if(!CONFIG.devMode && userFeedbackModel.get('row')) {
 				userFeedbackModel.save();				
 			}
-			this.controllerFor('index').send('next');
+			this.controllerFor('showCard').send('next');
 		},
 		changeLocale: function() {
 			var that = this, 

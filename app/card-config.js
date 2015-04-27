@@ -7,12 +7,12 @@ export default {
 	//define cards and overwrite defaults
 	cards: [
 		{
-			id: 'landing-page',
-			view: 'landingPage',
+			id: 'welcome',
+			view: 'welcome',
 			showResults: false,
 		},
 		{
-			id: 'emergency-response',
+			id: 'emergency-services',
 			baseAmount: 50
 		},
 		{
