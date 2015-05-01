@@ -10,31 +10,45 @@
 		<form class="landing-page-form col-xs-12">
 			<div class="form-group">
 				<label for="emailField">{{t "loc.yourEmail"}}</label>			
-				{{input class="form-control input-lg" type="text" maxlength=50 elementId="emailField" value=userResponseModel.email}}
+				{{input class="form-control input-lg" type="text" maxlength=50 elementId="emailField" value=userResponseModel.email disabled=feedbackWasSubmitted}}
 			</div>	
 			<div class="form-group">
 				<label>{{t "loc.yourGender"}}</label>			
-				{{view "select" class="form-control input-lg" prompt=view.genderPrompt content=view.genderOptions value=userFeedbackModel.gender}}
+				{{view "select" class="form-control input-lg" prompt=view.genderPrompt content=view.genderOptions value=userFeedbackModel.gender disabled=feedbackWasSubmitted}}
 			</div>	
 			<div class="form-group">
 				<label for="raceField">{{t "loc.yourRace"}}</label>
-				{{view "select" class="form-control input-lg" prompt=view.racePrompt elementId="raceField" content=view.raceOptions value=userFeedbackModel.race}}
+				{{view "select" class="form-control input-lg" prompt=view.racePrompt elementId="raceField" disabled=feedbackWasSubmitted content=view.raceOptions value=userFeedbackModel.race}}
 			</div>
 			<div class="form-group">
 				<label for="ageField">{{t "loc.yourAge"}}</label>
-				{{view "select" class="form-control input-lg" prompt=view.agePrompt elementId="ageField" content=view.ageOptions value=userFeedbackModel.ageBracket}}
+				{{view "select" class="form-control input-lg" prompt=view.agePrompt elementId="ageField" disabled=feedbackWasSubmitted content=view.ageOptions value=userFeedbackModel.ageBracket}}
 			</div>
 			<div class="form-group">
 				<label for="feedbackField">{{t "loc.yourExperience"}}</label>
-				{{textarea class="form-control input-lg text-box" elementId="feedbackField" value=userFeedbackModel.comments}}
+				{{textarea class="form-control input-lg text-box" elementId="feedbackField" disabled=feedbackWasSubmitted value=userFeedbackModel.comments}}
 			</div>
 		</form>
+
+		<div class="col-xs-12" style="margin-top: 20px;">
+			<button {{bind-attr class=":btn-primary :btn feedbackWasSubmitted:disabled"}} {{action "postFeedback"}}>
+				{{#unless feedbackWasSubmitted}}{{t "loc.submitFeedback"}}{{else}}{{t "loc.thankYou"}}{{/unless}}
+			</button>
+		</div>
+
 		<div class="col-xs-12">
 			<h3>{{t "loc.shareWith"}}</h3>
 			{{social-media-bar}}
 		</div>
-		<div class="col-xs-12" style="margin-top: 20px;">
-			<button class="btn btn-primary" {{action "postFeedback"}}>{{t "loc.submitFeedback"}}</button>
-		</div>
+	</div>
+	<div class="col-xs-12">
+		<h3 class="pull-left">{{t "cardTitle.resources"}}</h3>
+	</div>
+
+	<div class="card-body col-xs-12 ">
+		<a class="btn btn-link large" href="www.google.com" target="_blank">Link</a><br>
+		<a class="btn btn-link large" href="www.google.com" target="_blank">Link</a><br>
+		<a class="btn btn-link large" href="www.google.com" target="_blank">Link</a><br>
+		<a class="btn btn-link large" href="www.google.com" target="_blank">Link</a><br>
 	</div>
 </div>

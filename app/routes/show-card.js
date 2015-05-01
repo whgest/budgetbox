@@ -28,9 +28,5 @@ export default Em.Route.extend({
 	},
 	model: function(params) {
 		return this.controllerFor('index').get('allCards').findBy('id', params.card_id);
-	},
-	renderTemplate: function() {
-		var view = this.get('controller.model.view');
-		this.render(view, {into: 'application', outlet: 'content'});
 	}
 });

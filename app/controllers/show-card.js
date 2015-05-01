@@ -3,13 +3,15 @@ import CONFIG from "../card-config";
 
 export default Em.Controller.extend({
 	needs: ['application', 'index'],
-	anim: "toRight",
 	displayedCardIndex: Em.computed.alias('model.index'),
 	districtLinkout: CONFIG.linkToDistrictMap,
 	isTransitioning: false,
+	anim: "toRight",
 	allCards: Em.computed.alias('controllers.index.allCards'),
 	userResponseModel: Em.computed.alias('controllers.application.userResponseModel'),
 	userFeedbackModel: Em.computed.alias('controllers.application.userFeedbackModel'),
+	responseWasSubmitted: Em.computed.alias('controllers.application.responseWasSubmitted'),
+	feedbackWasSubmitted: Em.computed.alias('controllers.application.feedbackWasSubmitted'),
 
 	postalCodeIsValid: function() {
 		var zip = this.get('userResponseModel.postalCode');		
@@ -25,11 +27,14 @@ export default Em.Controller.extend({
 		var allCards = this.get('controllers.index.allCards'),
 			newCard = (cardIndex) ? allCards[cardIndex] : allCards[0],
 			that = this;
+			this.set('anim', (cardIndex > this.get('model.index') ? "toLeft" : "toRight"));
 		if (!this.get('isTransitioning')) {
 			this.set('isTransitioning', true);
 			this.transitionToRoute('showCard', newCard);
 			window.scrollTo(0, 0);
-			Em.run.later(function() {that.set('isTransitioning', false);}, 500);
+			Em.run.later(function() {
+				that.setProperties({isTransitioning: false, anim: 'toRight'});
+			}, 500);
 		}
 	},
 

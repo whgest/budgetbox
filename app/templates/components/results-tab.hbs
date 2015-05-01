@@ -1,10 +1,14 @@
 <div class="row">
 	<div class="option-text-large col-xs-10 col-sm-7">{{title}}</div>
 
-	<div class="option-text-large hidden-xs col-sm-2">${{card.selectedAmount}}</div>	
+	<div class="option-text-large hidden-xs col-sm-2">
+		{{#if card.selectedAmount}}${{card.selectedAmount}}{{/if}}
+	</div>	
 	<div class="option-text-large keep hidden-xs col-sm-2">${{card.baseAmount}}</div>	
 
-	<div class="col-xs-2 col-sm-1 edit-choice">{{t "loc.edit"}}</div>
+	{{#unless responseWasSubmitted}}
+		<div class="col-xs-2 col-sm-1 edit-choice">{{t "loc.edit"}}</div>
+	{{/unless}}
 </div>
 
 <div class="option-text-small col-xs-12 visible-xs-block">

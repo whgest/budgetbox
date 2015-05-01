@@ -27,7 +27,9 @@ export default Em.Component.extend({
 		return 'fa-long-arrow-%@'.fmt(dir);
 	}.property('card.selection'),
 	click: function() {
-		this.sendAction('action', this.get('card.index'));
+		if (!this.get('responseWasSubmitted')) {
+			this.sendAction('action', this.get('card.index'));
+		}
 	}
    
 });

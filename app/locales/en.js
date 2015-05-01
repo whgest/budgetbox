@@ -45,7 +45,8 @@ export default {
 		"choiceHeader": "Your Choice",
 		"currentHeader": "Current Rate",
 		"category": "Category",
-		"shareWith": "Share Budget-In-A-Box with friends and family"
+		"shareWith": "Share Budget-In-A-Box with friends and family",
+		"thankYou": "Thank you!"
 	},
 
 	"cardTitle": {
