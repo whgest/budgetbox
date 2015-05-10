@@ -1,9 +1,14 @@
  /*====== BASE ====== */
-@baseline-unit: 0.72rem;
+@baseline-unit: 0.72em;
 
+//Color variables
 @primary-base-color: #8dc449;
+@secondary-base-color: #2192c1;
 @navigation-color: #4D4D4D;
-@base-a-color: #2192c1;
+
+@vote-raise-color: #37b34a;
+@vote-keep-color: #f4c70c;
+@vote-cut-color: #f94f4b;
 
 .border-radius(@radius) {
 	border-radius: @radius;
@@ -18,12 +23,14 @@
 }
 
 	/* === TYPOGRAPHY === */
+	//Type variables
 	@font-family-base: 'Open Sans', 'Helvetica', Arial, sans-serif;
 	@font-size-base: 14px;
 	@font-color-base: #4C4C4C;
 
 	html {
 		font-size: @font-size-base;
+	    -webkit-font-smoothing: antialiased !important;
 	}
 	body {
 		color: @font-color-base;
@@ -43,6 +50,7 @@
 
 	h1 {
 		margin: 0;
+        margin-top: @baseline-unit;
 		margin-bottom: @baseline-unit;
 
 		font-size: 2.14em;
@@ -52,6 +60,7 @@
 
 	h2 {
 		margin: 0;
+		margin-top: @baseline-unit/3;
 		margin-bottom: @baseline-unit/3;
 
 		font-size: 1.28em;
@@ -103,12 +112,19 @@
 		padding: 1em 0;
 	}
 
+	footer {
+		background-color: @navigation-color;
+		color: #FFF;
+		padding: 1em 0;
+	}
+
 	a {
-		color: @base-a-color;
+		color: @secondary-base-color;
 		text-decoration: none;
+		-webkit-font-smoothing: antialiased;
 
 		&:hover {
-			color: @base-a-color;
+			color: @secondary-base-color;
 			text-decoration: underline;
 		}
 	}
@@ -150,6 +166,7 @@
 
 
 /* ====== MODULES ======*/
+/* === BUTTONS === */
 .btn {
 	padding: @baseline-unit;
 	width: 100%;
@@ -165,48 +182,139 @@
 
 	&:hover {
 		color: #fff;
-		opacity: .7;
+		background-color: darken(@navigation-color, 5%)
 	}
 }
+	.btn-vote {
+		padding-left: 6em;
+		text-align: left;
+	}
 
-.accordion--title {
-	position: relative;
-	padding: @baseline-unit 15px;
-	background-color: lighten(@navigation-color, 60%);
-	margin: 1px 0;
+	//Typography
+	.btn-vote--small {
+		font-size: 1em;
+		font-weight: 700;
+	}
 
-	cursor: pointer;
-}
+	.btn-vote--large {
+		font-size: 1.29em;
+		line-height: 1.11em;
+	}
 
-@media (min-width: 768px) {
+	//States
+	.btn-vote__raise {
+		background-color: @vote-raise-color;
+		background-image: url(images/vote-icons-black-raise.svg);
+		background-origin: content-box;
+		background-position: -4.1em 50%;
+		background-repeat: no-repeat;
+		border: 2px solid rgba(0, 0, 0, .5);
+		color: darken(@vote-raise-color, 38%);
+
+		&:hover {
+			opacity: 1;
+
+			background-color: darken(@vote-raise-color, 5%);
+			color: darken(@vote-raise-color, 42%);
+		}
+
+		&:active {
+			background-image: url(images/vote-icons-black-raise.svg);
+		}
+	}
+	.btn-vote__keep {
+		background-color: @vote-keep-color;
+		background-image: url(images/vote-icons-black-keep.svg);
+		background-origin: content-box;
+		background-position: -4.25em 50%;
+		background-repeat: no-repeat;
+		background-size: 2.5em;
+		border: 2px solid rgba(0, 0, 0, .5);
+		color: darken(@vote-keep-color, 42%);
+
+		&:hover {
+			opacity: 1;
+
+			background-color: darken(@vote-keep-color, 5%);
+			color: darken(@vote-keep-color, 42%);
+		}
+
+		&:active {
+			background-image: url(images/vote-icons-black-keep.svg);
+		}
+	}
+	.btn-vote__cut {
+		background-color: @vote-cut-color;
+		background-image: url(images/vote-icons-black-cut.svg);
+		background-origin: content-box;
+		background-position: -4.15em 50%;
+		background-repeat: no-repeat;
+		border: 2px solid rgba(0, 0, 0, .5);
+		color: darken(@vote-cut-color, 60%);
+
+		&:hover {
+			opacity: 1;
+
+			background-color: darken(@vote-cut-color, 3%);
+			color: darken(@vote-cut-color, 60%);
+		}
+
+		&:active {
+			background-image: url(images/vote-icons-black-cut.svg);
+		}
+	}
+
+
+/* === ACCORDION === */
 	.accordion--title {
-		padding: 0;
+		position: relative;
+		padding: @baseline-unit 15px;
+		background-color: lighten(@navigation-color, 60%);
+		margin: 2px -15px;
+
+		cursor: pointer;
 	}
+
+	@media (min-width: 768px) {
+		.accordion--title {
+			padding: 0;
+		}
+	}
+
+	.accordion--title::after {
+		content: '';
+		display: block;
+		height: .25em;
+		width: .5em;
+		float: right;
+		margin-top: .3em;
+
+		border-top: .5em solid @font-color-base;
+		border-left: .3em solid transparent;
+		border-right:.3em solid transparent;
+	}
+
+	.accordion--text {
+	    padding-top: @baseline-unit;
+	    padding-bottom: @baseline-unit;
+	}
+
+/* === RESULTS TABLE === */
+.results {
+	margin-left: 15px;
+	margin-right: 15px;
 }
+	.results--header {
+		overflow: hidden;
+		padding: .5em 0;
 
-.accordion--title::after {
-	content: '';
-	display: block;
-	height: .25em;
-	width: .5em;
-	float: right;
-	margin-top: .3em;
+		background-color: @secondary-base-color;
+		border-bottom: 1px solid lighten(@navigation-color, 50%);
+		color: #FFF;
 
-	border-top: .5em solid @font-color-base;
-	border-left: .3em solid transparent;
-	border-right:.3em solid transparent;
-}
-
+		font-size: 1.28em;
+		font-weight: 400;
+		line-height: 1.25em;
+	}
 
 /* ====== STATE ======*/
-
-
-/* those options dont work on phone without a margin/pad on them - feel free to delete when you replace it */
-.user-option {
-	cursor: pointer;
-	font-size: 16px;
-	border: 2px solid;
-	padding: 5px;
-	margin-top: 25px;
-	border-radius: 6px;
-}

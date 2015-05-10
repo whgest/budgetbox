@@ -1,19 +1,20 @@
-<div class="row">
-	<div class="option-text-large col-xs-10 col-sm-7">{{title}}</div>
+<div class="row results--row">
+	<div class="col-xs-10 col-sm-7 results--row--title">{{title}}</div>
+	<div class="col-xs-2 col-sm-1 pull-right"><a>{{t "loc.edit"}}</a></div>
 
-	<div class="option-text-large hidden-xs col-sm-2">
+	<div class="hidden-xs col-sm-2">
 		{{#if card.selectedAmount}}${{card.selectedAmount}}{{/if}}
 	</div>	
-	<div class="option-text-large keep hidden-xs col-sm-2">${{card.baseAmount}}</div>	
+	<div class="col-sm-2">${{card.baseAmount}}</div>	
 
-	{{#unless responseWasSubmitted}}
-		<div class="col-xs-2 col-sm-1 edit-choice">{{t "loc.edit"}}</div>
-	{{/unless}}
+	<!-- {{#unless responseWasSubmitted}}
+		<div class="col-xs-2 col-sm-1">{{t "loc.edit"}}</div>
+	{{/unless}} -->
 </div>
 
-<div class="option-text-small col-xs-12 visible-xs-block">
-	<div {{bind-attr class="currentPayText:col-xs-7:col-xs-12"}} style="padding-left: 0;"><span {{bind-attr class="iconClass :fa :icon-small"}} style="margin-right: 10px;"></span><span>{{selectionText}}</span></div>
+<div class="col-xs-12 visible-xs-block">
+	<div {{bind-attr class="currentPayText:col-xs-7:col-xs-12"}}><span {{bind-attr class=""}}></span>{{selectionText}}</div>
 	{{#if currentPayText}}
-		<div class="keep col-xs-5" style="text-align:right; padding-right:0;">{{currentPayText}}</div>
+		<div class="col-xs-5">{{currentPayText}}</div>
 	{{/if}}
 </div>

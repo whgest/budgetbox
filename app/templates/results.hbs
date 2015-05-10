@@ -1,31 +1,39 @@
-<div class="container">
-	<h3 class="col-xs-12">{{t "loc.resultsHeader"}}</h3>
-	<div class="col-xs-12 no-gutter-phone" style="margin-top: 20px;">
-		<div class="hidden-xs col-sm-12 results-header">
-			<div class="col-sm-7">{{t "loc.category"}}</div>
-			<div class="col-sm-2">{{t "loc.choiceHeader"}}</div>
-			<div class="col-sm-2">{{t "loc.currentHeader"}}</div>
-		</div>
+<main class="container biab-container">
+	<div class="row">
+		<h1 class="col-xs-12">{{t "loc.resultsHeader"}}</h1>
+	</div>
+	
+	<!-- Desktop table header -->
+	<div class="results">
+		<div class="row hidden-xs">
+			<div class="col-sm-12 results--header">
+				<div class="col-sm-7" style="margin-top: .5em">{{t "loc.category"}}</div>
+				<div class="col-sm-2">{{t "loc.choiceHeader"}}</div>
+				<div class="col-sm-2">{{t "loc.currentHeader"}}</div>
+			</div>
+		</div><!-- end Desktop table header -->
+
+		<!-- Results -->
 		{{#each card in allCards}}
 			{{#if card.showResults}}
 				{{results-tab card=card action="jumpToCard" responseWasSubmitted=responseWasSubmitted}}
 			{{/if}}
 		{{/each}}
 
-		<div class="total-display col-xs-12 hidden-xs">
+		<div class="col-xs-12 hidden-xs">
 			<div class="col-sm-7">{{t "loc.totals"}}</div>
 			<div {{bind-attr class="totalClass :col-sm-2"}}>${{estimatedTotal}}</div>
 			<div class="col-sm-2">${{currentPay}}</div>
 		</div>
 
-		<div class="total-display col-xs-12 visible-xs-block">
+		<div class="col-xs-12 visible-xs-block">
 			<div {{bind-attr class="totalClass :col-xs-6"}}>{{estimatedTotalText}}</div>
 			<div class="col-xs-6 text-right">{{currentPayText}}</div>
 		</div>
-		<div class="col-xs-12 col-sm-6 pull-right" style="margin-top: 20px;">
+		<div class="col-xs-12 col-sm-6">
 			<button {{bind-attr class=":btn :btn-primary"}} {{action "postUserResponse"}}>
 				{{#unless responseWasSubmitted}}{{t "loc.submit"}}{{else}}{{t "loc.next"}}{{/unless}}
 			</button>
 		</div>
 	</div>
-</div>
+</main>
