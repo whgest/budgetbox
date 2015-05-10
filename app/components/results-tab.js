@@ -1,7 +1,7 @@
 import Em from "ember";
 
 export default Em.Component.extend({
-	classNames: ['results-tab', 'col-xs-12'],
+	classNames: ['results-tab'],
 	classNameBindings: ['card.selection'],
 	card: null,
 	title: Em.computed.alias('card.cardTitle'),

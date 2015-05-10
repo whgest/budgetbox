@@ -6,7 +6,7 @@
 	<!-- Desktop table header -->
 	<div class="results">
 		<div class="row hidden-xs">
-			<div class="col-sm-12 results--header">
+			<div class="results--header">
 				<div class="col-sm-7" style="margin-top: .5em">{{t "loc.category"}}</div>
 				<div class="col-sm-2">{{t "loc.choiceHeader"}}</div>
 				<div class="col-sm-2">{{t "loc.currentHeader"}}</div>
@@ -20,20 +20,20 @@
 			{{/if}}
 		{{/each}}
 
-		<div class="col-xs-12 hidden-xs">
-			<div class="col-sm-7">{{t "loc.totals"}}</div>
-			<div {{bind-attr class="totalClass :col-sm-2"}}>${{estimatedTotal}}</div>
-			<div class="col-sm-2">${{currentPay}}</div>
-		</div>
-
-		<div class="col-xs-12 visible-xs-block">
-			<div {{bind-attr class="totalClass :col-xs-6"}}>{{estimatedTotalText}}</div>
-			<div class="col-xs-6 text-right">{{currentPayText}}</div>
-		</div>
-		<div class="col-xs-12 col-sm-6">
-			<button {{bind-attr class=":btn :btn-primary"}} {{action "postUserResponse"}}>
-				{{#unless responseWasSubmitted}}{{t "loc.submit"}}{{else}}{{t "loc.next"}}{{/unless}}
-			</button>
+		<div class="row clearfix">
+			<div class="results--footer">
+				<div class="col-sm-7 hidden-xs">{{t "loc.totals"}}</div>
+				<div class="col-xs-6 col-sm-2"><span class="visible-xs-inline">{{estimatedTotalText}}<br></span>${{estimatedTotal}}</div>
+				<div class="col-xs-6 col-sm-2"><span class="visible-xs-inline">{{currentPayText}}<br></span>${{currentPay}}</div>
+			</div>
 		</div>
 	</div>
+		<div class="row">
+			<div class="col-sm-5">
+				<button {{bind-attr class=":btn"}} {{action "postUserResponse"}}>
+					{{#unless responseWasSubmitted}}{{t "loc.submit"}}{{else}}{{t "loc.next"}}{{/unless}}
+				</button>
+			</div>
+		</div>
+	
 </main>
