@@ -1,11 +1,11 @@
 <div class="row results--row">
 	<div class="col-xs-10 col-sm-7 results--row--title">{{title}}</div>
-	<div class="col-xs-2 col-sm-1 pull-right"><a>{{t "loc.edit"}}</a></div>
+	<div class="col-xs-2 col-sm-1 results--row--edit pull-right"><a>{{t "loc.edit"}}</a></div>
 
-	<div class="col-xs-6 col-sm-2 results--row--voted">
-		{{#if card.selectedAmount}}${{card.selectedAmount}}{{/if}}
+	<div class="col-xs-6 col-sm-2 results--row--numbers">
+		{{#if card.selectedAmount}}<span class="visible-xs-inline">{{t "loc.choiceHeader"}}: </span>${{card.selectedAmount}}{{/if}}
 	</div>	
-	<div class="col-xs-6 col-sm-2 results--row--current">${{card.baseAmount}}</div>	
+	<div class="col-xs-6 col-sm-2 results--row--numbers"><span class="visible-xs-inline">{{t "loc.currentHeader"}}: </span>${{card.baseAmount}}</div>	
 
 	<!-- {{#unless responseWasSubmitted}}
 		<div class="col-xs-2 col-sm-1">{{t "loc.edit"}}</div>

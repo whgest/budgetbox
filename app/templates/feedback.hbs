@@ -1,54 +1,82 @@
-<div class="container biab-container">
+<main class="container biab-container">
 	<div class="row">
-		<h3 class="pull-left col-xs-12">{{t "cardTitle.feedback"}}</h3>
-		
-
-		<div class="card-body col-xs-12">
-			{{t "textBlockOne.feedback"}}
-		</div>
-
-		<form class="landing-page-form col-xs-12">
-			<div class="form-group">
-				<label for="emailField">{{t "loc.yourEmail"}}</label>			
-				{{input class="form-control input-lg" type="text" maxlength=50 elementId="emailField" value=userResponseModel.email disabled=feedbackWasSubmitted}}
-			</div>	
-			<div class="form-group">
-				<label>{{t "loc.yourGender"}}</label>			
-				{{view "select" class="form-control input-lg" prompt=view.genderPrompt content=view.genderOptions value=userFeedbackModel.gender disabled=feedbackWasSubmitted}}
-			</div>	
-			<div class="form-group">
-				<label for="raceField">{{t "loc.yourRace"}}</label>
-				{{view "select" class="form-control input-lg" prompt=view.racePrompt elementId="raceField" disabled=feedbackWasSubmitted content=view.raceOptions value=userFeedbackModel.race}}
-			</div>
-			<div class="form-group">
-				<label for="ageField">{{t "loc.yourAge"}}</label>
-				{{view "select" class="form-control input-lg" prompt=view.agePrompt elementId="ageField" disabled=feedbackWasSubmitted content=view.ageOptions value=userFeedbackModel.ageBracket}}
-			</div>
-			<div class="form-group">
-				<label for="feedbackField">{{t "loc.yourExperience"}}</label>
-				{{textarea class="form-control input-lg text-box" elementId="feedbackField" disabled=feedbackWasSubmitted value=userFeedbackModel.comments}}
-			</div>
-		</form>
-
-		<div class="col-xs-12" style="margin-top: 20px;">
-			<button {{bind-attr class=":btn-primary :btn feedbackWasSubmitted:disabled"}} {{action "postFeedback"}}>
-				{{#unless feedbackWasSubmitted}}{{t "loc.submitFeedback"}}{{else}}{{t "loc.thankYou"}}{{/unless}}
-			</button>
+		<div class="col-xs-12">
+			<h1>{{t "cardTitle.feedback"}}</h1>
 		</div>
 
 		<div class="col-xs-12">
-			<h3>{{t "loc.shareWith"}}</h3>
-			{{social-media-bar}}
+			<p>
+				{{t "textBlockOne.feedback"}}
+			</p>
+		</div>
+
+		<form>
+			<div class="row form-group">
+				<div class="col-xs-12">
+					<label for="emailField">{{t "loc.yourEmail"}}</label>			
+					{{input class="form-control input-lg" type="text" maxlength=50 elementId="emailField" value=userResponseModel.email disabled=feedbackWasSubmitted}}
+				</div>
+			</div>	
+			<div class="row form-group">
+				<div class="col-sm-3">
+					<label>{{t "loc.yourGender"}}</label>			
+					{{view "select" class="form-control input-lg" prompt=view.genderPrompt content=view.genderOptions value=userFeedbackModel.gender disabled=feedbackWasSubmitted}}
+				</div>
+
+				<div class="col-sm-3">
+					<label for="ageField">{{t "loc.yourAge"}}</label>
+					{{view "select" class="form-control input-lg" prompt=view.agePrompt elementId="ageField" disabled=feedbackWasSubmitted content=view.ageOptions value=userFeedbackModel.ageBracket}}
+				</div>
+				
+				<div class="col-sm-6">
+					<label for="raceField">{{t "loc.yourRace"}}</label>
+					{{view "select" class="form-control input-lg" prompt=view.racePrompt elementId="raceField" disabled=feedbackWasSubmitted content=view.raceOptions value=userFeedbackModel.race}}
+				</div>
+
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-12">
+					<label for="feedbackField">{{t "loc.yourExperience"}}</label>
+					{{textarea class="form-control input-lg text-box" elementId="feedbackField" disabled=feedbackWasSubmitted value=userFeedbackModel.comments}}
+				</div>
+			</div>
+		</form>
+
+		<div class="row form-group">
+			<div class="col-sm-4">
+				<button {{bind-attr class=":btn feedbackWasSubmitted:disabled"}} {{action "postFeedback"}}>
+					{{#unless feedbackWasSubmitted}}{{t "loc.submitFeedback"}}{{else}}{{t "loc.thankYou"}}{{/unless}}
+				</button>
+			</div>
 		</div>
 	</div>
-	<div class="col-xs-12">
-		<h3 class="pull-left">{{t "cardTitle.resources"}}</h3>
-	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<h2>{{t "loc.shareWith"}}</h2>
+		</div>
+		<div class="col-xs-4">
+			<a class="btn btn__facebook" target="_blank"href="http://www.facebook.com/share.php?u=http://www.budgetbox.com">Facebook</a>
+		</div>
 
-	<div class="card-body col-xs-12 ">
-		<a class="btn btn-link large" href="www.google.com" target="_blank">Link</a><br>
-		<a class="btn btn-link large" href="www.google.com" target="_blank">Link</a><br>
-		<a class="btn btn-link large" href="www.google.com" target="_blank">Link</a><br>
-		<a class="btn btn-link large" href="www.google.com" target="_blank">Link</a><br>
+		<div class="col-xs-4">
+			<a class="btn btn__twitter" target="_blank" href="https://twitter.com/home?status=I%20just%20voted%20on%20the%20Budget%20in%20a%20Box%20thing%20for%20%23ATX%20budgetbox.com">Twitter</a>
+		</div>
+
+		<div class="col-xs-4">
+			<a class="btn btn__email" target="_blank" href="mailto:friends?&subject=Budget-In-A-Box&body=Hello%20friends,%0A%0AI%20just%20participated%20in%20this%20cool%20thing.%20You%20should%20do%20it%20too:%20budgetbox.com">Email</a>
+		</div>
 	</div>
-</div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<h2>{{t "cardTitle.resources"}}</h2>
+		</div>
+
+		<div class="col-xs-12 ">
+			<p><a href="www.google.com" target="_blank">Link</a></p>
+			<p><a href="www.google.com" target="_blank">Link</a></p>
+			<p><a href="www.google.com" target="_blank">Link</a></p>
+			<p><a href="www.google.com" target="_blank">Link</a></p>
+		</div>
+	</div>
+</main>
