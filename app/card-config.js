@@ -19,24 +19,30 @@ export default {
 			id: 'parks-libraries',
 			baseAmount: 100
 		},
-		// {
-		// 	id: 'planning-development'
-		// },
-		// {
-		// 	id: 'health-housing'
-		// },
-		// {
-		// 	id: 'energy'
-		// },
-		// {
-		// 	id: 'water'
-		// },
-		// {
-		// 	id: 'clean-community'
-		// },
-		// {
-		// 	id: 'streets-infrastructure'
-		// },
+		{
+			id: 'planning-development',
+			baseAmount: 100
+		},
+		{
+			id: 'health-housing',
+			baseAmount: 100
+		},
+		{
+			id: 'energy',
+			baseAmount: 100
+		},
+		{
+			id: 'water',
+			baseAmount: 100
+		},
+		{
+			id: 'clean-community',
+			baseAmount: 100
+		},
+		{
+			id: 'streets-infrastructure',
+			baseAmount: 100
+		},
 		{
 			id: 'results',
 			view: 'results',
