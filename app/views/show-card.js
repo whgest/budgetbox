@@ -35,5 +35,6 @@ export default Em.View.extend({
 
 	ageOptions: function() {
 		return ['0 to 130 years']; 
-	}.on('init').property('localeDidChange')
+	}.on('init').property('localeDidChange'),
+
 });

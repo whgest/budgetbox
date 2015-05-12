@@ -16,8 +16,8 @@ export default {
 		"findDistrict": "find your district",
 		"resultsHeader": "Review your choices",
 		"youSpend": "You spend $%@/yr",
-		"whatServices": "What services are included?",
-		"servicesProvided": "2014: Services provided",
+		"whatServices": "Included Services",
+		"servicesProvided": "2014 Performance",
 		"progress": "Progress: %@ of %@",
 		"estTotal": "Your total:",
 		"baseTotal": "Current total:",
@@ -51,7 +51,7 @@ export default {
 
 	"cardTitle": {
 		"welcome": "Welcome!",
-		"emergency-services": "Emergency Services",
+		"emergency-response": "Emergency Response",
 		"parks-libraries": "Parks and Recreation",
 		"planning-development": "Planning and Development",
 		"health-housing": "Health and Housing",
@@ -65,26 +65,26 @@ export default {
 
 	"textBlockOne": {
 		"welcome": "<p>Thank you for your input and participation in the City of Austin’s Budget process. Please visit <a href=\"https://youtu.be/J6aLaOzXvvw\" target=\"_blank\">https://youtu.be/J6aLaOzXvvw</a> to watch the Budget Basics video to familiarize yourself with the City Budget.</p><p>This exercise divides the budget into eight major service groups. If you are viewing this on a mobile phone, at the top of each screen, 2014 Performance & Service levels for each group appear in collapsible menus.  By selecting one of three buttons you choose to increase funding by 5% for additional services, maintain funding, or decrease funding by 5% for fewer services.  The dollar amounts are based on what an average resident currently pays for those services in a year through property taxes and utility fees.</p><p>At the end, review your choices and make any changes before submitting your selections.</p><p>Get started here!",
-		"emergency-services": " ",
-		"parks-libraries": " ",
-		"planning-development": " ",
-		"energy": " ",
-		"health-housing": " ",
-		"water": " ",
-		"clean-community": " ",
-		"streets-infrastructure": " ",
+		"emergency-response": "Police, fire, and emergency medical response|Police patrol|Traffic enforcement|911 Communications|Crime and fire investigations|Community education and partnerships",
+		"parks-libraries": "Operate 23 library branches|Operate 25 recreation and senior centers|Operate 39 pools and 11 splash pads|Operate 12 museums, cultural centers, and gardens|Youth and adult classes such as fitness, arts, literacy and storytelling|Parks grounds maintenance|Park Rangers",
+		"planning-development": "Business recruitment and retention|Small business development|Residential and commercial building permitting and inspections|Neighborhood planning and zoning",
+		"energy": "Power generation|Electricity transmission|Customer billing assistance|Energy conservation programs|Tree trimming around power lines",
+		"health-housing": "Disease prevention|Health clinics|Health code and restaurant inspections|Homebuyer assistance|Housing development assistance|Homeless services|Animal protection and shelter services",
+		"water": "Water treatment and transmission|Wastewater treatment and reuse|Storm water drainage|Flood safety|Pollution prevention|Water conservation|Wildland conservation",
+		"clean-community": "Trash collection|Recycling collection|Organics collection|Hazardous waste disposal|Street sweeping|Litter control|Investigate dangerous buildings, housing, nuisance, and zoning code complaints",
+		"streets-infrastructure": "Transportation planning|Traffic management|Street and bridge maintenance|Pedestrian sidewalks and street crossings|Bicycle lanes|Parking management",
 		"feedback": "Thank you for your participation in the City of Austin Budget process.  Your input is valuable.  Go to <a href=\"www.austintexas.gov/budgetboxresults\" target=\"_blank\">www.austintexas.gov/budgetboxresults</a> after June 10th to see the results. The demographic questions below are not required, but that information helps us determine if we reached a diverse group of citizens."
 	},
 
 	"textBlockTwo": {
-		"emergency-services": " ",
-		"parks-libraries": " ",
-		"planning-development": " ",
-		"energy": " ",
-		"health-housing": " ",
-		"water": " ",
-		"clean-community": " ",
-		"streets-infrastructure": " ",
+		"emergency-response": "7 minutes and 45 seconds was the average police response time for emergency and urgent calls|93 percent of potentially life-threatening, urban-area calls were responded to by Emergency Medical Services in less than 10 minutes|85 percent of emergency incidents were responded to by Austin Fire Department in 8 minutes or less|4 violent crimes per 1,000 people|46 property crimes per 1,000 people|83 percent of structure fires were confined to the room of origin",
+		"parks-libraries": "154,057 participants attended library programs|3.1 million visits to City libraries|17,527 registered participants in recreation programs|72 percent of citizens surveyed were satisfied or very satisfied with library materials|71 percent of citizens surveyed were satisfied or very satisfied with the appearance of parks grounds|73 percent of citizens surveyed were satisfied or very satisfied with recreation services",
+		"planning-development": "2,315 new jobs were created through economic development efforts|56 businesses assisted by City programs demonstrated growth|23 percent of commercial building plan reviews were completed on time|38 percent of new residential zoning reviews were completed on time|91 percent of building inspections were performed within 24 hours of request",
+		"energy": "The average number of electricity outages per customer was less than 1|The average duration of an electricity outage was 45 minutes|63 percent of customers surveyed were satisfied with electric services|21 percent of Austin Energy’s electricity supply came from renewable sources such as wind, solar and biomass",
+		"health-housing": "7,583 school-aged children received immunizations at a City clinic|Fixed food establishments inspected an average of 1.6 times|80 percent of homeless people in prevention programs maintained or transitioned into housing|6,509 households/persons were assisted through all services provided by the housing department|7,636 companion animals were sterilized in the community|94 percent of shelter animals were adopted, transferred to rescue groups, or returned to owner",
+		"water": "Drinking water quality was 67 percent better than state health standards|Treated wastewater quality was 57 percent better than national health standards|90 percent of high priority drinking water leaks were responded to within 3 hours|Provided increased flood protection for 31 structures and roadways|68 percent of citizens surveyed were satisfied with flood hazard mitigation efforts|3.7 million gallons of pollutants were recovered as a result of business inspections and spills response",
+		"clean-community": "26 pounds of trash were collected per customer per weekly cycle|23 pounds of recycled materials were collected per customer per two-week cycle|40 percent of the waste stream was diverted from the landfill|4.5 days was the average numbers of days from when Code Compliance complaints were first reported until first response by an investigator|",
+		"streets-infrastructure": "19 percent of residents surveyed were satisfied or very satisfied with the traffic flow on major city streets|804 lane miles of street preventative maintenance were completed|80 percent of street lane miles were in fair to excellent condition|44 new bicycle route miles were constructed|29,156 linear feet of new sidewalks were constructed",
 	}
 
 };

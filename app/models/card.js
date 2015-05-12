@@ -39,5 +39,28 @@ export default Em.Object.extend({
 			amount = Math.round(this.get('baseAmount')  * (1 + multiplier));
 
 		return amount;
-	}
+	},
+	textBlockOneFormatted: function() {
+		var id = this.get('id'),
+			elements = this.t('textBlockOne.' + id).split("|"),
+			list = '';
+
+			elements.forEach(function(element) {
+				list += ("<li>%@</li>".fmt(element));
+			});
+			return "<ul>%@</ul>".fmt(list);
+
+	}.on('init').property(),
+
+	textBlockTwoFormatted: function() {
+		var id = this.get('id'),
+			elements = this.t('textBlockTwo.' + id).split("|"),
+			list = '';
+
+			elements.forEach(function(element) {
+				list += ("<p>%@</p>".fmt(element));
+			});
+			return list;
+
+	}.on('init').property(),
 });

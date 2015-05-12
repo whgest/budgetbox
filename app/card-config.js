@@ -12,36 +12,36 @@ export default {
 			showResults: false,
 		},
 		{
-			id: 'emergency-services',
-			baseAmount: 50
+			id: 'emergency-response',
+			baseAmount: 677
 		},
 		{
 			id: 'parks-libraries',
-			baseAmount: 100
+			baseAmount: 124
 		},
 		{
 			id: 'planning-development',
-			baseAmount: 100
+			baseAmount: 41
 		},
 		{
 			id: 'health-housing',
-			baseAmount: 100
+			baseAmount: 79
 		},
 		{
 			id: 'energy',
-			baseAmount: 100
+			baseAmount: 1295
 		},
 		{
 			id: 'water',
-			baseAmount: 100
+			baseAmount: 1209
 		},
 		{
 			id: 'clean-community',
-			baseAmount: 100
+			baseAmount: 348
 		},
 		{
 			id: 'streets-infrastructure',
-			baseAmount: 100
+			baseAmount: 99
 		},
 		{
 			id: 'results',

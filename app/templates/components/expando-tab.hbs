@@ -3,12 +3,12 @@
 </div>
 <div {{bind-attr id="hiddenElementId"}} class="accordion collapse">
 	<div class="accordion--text visible-xs-block">
-		<p>{{locText}}</p>
+		<p>{{{locText}}}</p>
 	</div>
 </div>
 
 {{!-- on non-phones dont do the expando thing, just display --}}
 	<div class="hidden-xs">
-		<h2>{{tabLabelLocalized}}</h2>
-		<p>{{locText}}</p>
+		<h2>{{tabLabelLocalized}}:</h2>
+		<p>{{{locText}}}</p>
 	</div>
