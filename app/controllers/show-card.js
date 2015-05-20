@@ -38,6 +38,17 @@ export default Em.Controller.extend({
 		}
 	},
 
+	feedbackIsValid: function() {
+		var userFeedbackModel = this.get('userFeedbackModel');
+		return !!userFeedbackModel.get('ageBracket') ||
+		!!userFeedbackModel.get('comments') ||
+		!!userFeedbackModel.get('race') ||
+		!!userFeedbackModel.get('gender') ||
+		!!userFeedbackModel.get('referredBy') ||
+		!!userFeedbackModel.get('email');
+	}.property('userFeedbackModel.ageBracket', 'userFeedbackModel.comments', 'userFeedbackModel.race',
+		'userFeedbackModel.gender', 'userFeedbackModel.referredBy', 'userFeedbackModel.email'),
+
 	localeDidChange: function() {
 		this.get('allCards').forEach(function(card) {
 			card.notifyPropertyChange('localeDidChange');

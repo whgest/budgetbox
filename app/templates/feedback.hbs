@@ -36,6 +36,12 @@
 			</div>
 			<div class="row form-group">
 				<div class="col-xs-12">
+					<label for="referralField">{{t "loc.referredBy"}}</label>
+					{{textarea class="form-control input-lg text-box" elementId="referralField" disabled=feedbackWasSubmitted value=userFeedbackModel.referredBy}}
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-xs-12">
 					<label for="feedbackField">{{t "loc.yourExperience"}}</label>
 					{{textarea class="form-control input-lg text-box" elementId="feedbackField" disabled=feedbackWasSubmitted value=userFeedbackModel.comments}}
 				</div>
@@ -44,7 +50,7 @@
 
 		<div class="row form-group">
 			<div class="col-sm-4">
-				<button {{bind-attr class=":btn feedbackWasSubmitted:disabled"}} {{action "postFeedback"}}>
+				<button {{bind-attr class=":btn feedbackWasSubmitted:disabled feedbackIsValid::disabled"}} {{action "postFeedback"}}>
 					{{#unless feedbackWasSubmitted}}{{t "loc.submitFeedback"}}{{else}}{{t "loc.thankYou"}}{{/unless}}
 				</button>
 			</div>

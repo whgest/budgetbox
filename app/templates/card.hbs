@@ -13,17 +13,17 @@
 			</div>
 
 			<div class="col-xs-12 col-sm-5">		
-				<div {{bind-attr class=":btn :btn-vote :btn-vote__raise card.didSelectRaise:selected"}}{{action "makeSelection" "raise"}}>
+				<div {{bind-attr class=":btn :btn-vote :btn-vote__raise card.selection:btn-vote__blur  card.didSelectRaise:btn-vote__selected"}}{{action "makeSelection" "raise"}}>
 					<span class="btn-vote--small">{{t "loc.raiseFunding"}}</span><br>
 					<span class="btn-vote--large">{{card.raisePrompt}}</span>
 				</div>
 				
-				<div {{bind-attr class=":btn :btn-vote :btn-vote__keep card.didSelectKeep:selected"}}{{action "makeSelection" "keep"}}>
+				<div {{bind-attr class=":btn :btn-vote :btn-vote__keep card.selection:btn-vote__blur card.didSelectKeep:btn-vote__selected"}}{{action "makeSelection" "keep"}}>
 					<span class="btn-vote--small">{{t "loc.keepFunding"}}</span><br>
 					<span class="btn-vote--large">{{card.keepPrompt}}</span>
 				</div>
 						
-				<div {{bind-attr class=":btn :btn-vote :btn-vote__cut card.didSelectCut:selected"}}{{action "makeSelection" "cut"}}>
+				<div {{bind-attr class=":btn :btn-vote :btn-vote__cut card.selection:btn-vote__blur  card.didSelectCut:btn-vote__selected"}}{{action "makeSelection" "cut"}}>
 					<span class="btn-vote--small">{{t "loc.cutFunding"}}</span><br>
 					<span class="btn-vote--large">{{card.cutPrompt}}</span>
 				</div>

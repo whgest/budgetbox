@@ -32,6 +32,7 @@ export default {
 		"agePrompt": "Prefer not to answer",
 		"racePrompt": "Prefer not to answer",
 		"yourExperience": "How was your Budget-In-A-Box experience?",
+		"referredBy": "How did you hear about Budget-In-A-Box?",
 		"submitFeedback": "Submit your feedback",
 		"invalidZipCode": "Please enter a 5 digit zip code.",
 		"invalidDistrict": "Please select your district.",
