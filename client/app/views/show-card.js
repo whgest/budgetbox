@@ -26,15 +26,20 @@ export default Em.View.extend({
 	}.on('init').property('localeDidChange'),
 
 	genderOptions: function() {
-		return ['Female', 'Male'];
+		return [this.t('loc.genderFemale'), this.t('loc.genderMale')];
 	}.on('init').property('localeDidChange'),
 
 	raceOptions: function() {
-		return ['Human', 'Dwarf', 'Halfling']; 
+		return [this.t('loc.raceWhite'), 
+				this.t('loc.raceHispanic'), 
+				this.t('loc.raceBlack'), 
+				this.t('loc.raceNativeAm'), 
+				this.t('loc.raceAsian'), 
+				this.t('loc.raceOther')]; 
 	}.on('init').property('localeDidChange'),
 
 	ageOptions: function() {
-		return ['0 to 130 years']; 
-	}.on('init').property('localeDidChange'),
+		return ['<20', '21-30', '31-40', '41-50', '51-60', '61-70', '>71']; 
+	}.on('init').property('localeDidChange')
 
 });

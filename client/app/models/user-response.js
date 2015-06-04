@@ -11,7 +11,7 @@ export default DS.Model.extend({
     water: DS.attr('number'),
     cleanCommunity: DS.attr('number'),
     streetsInfrastructure: DS.attr('number'),
-    total: DS.attr('number'),
+    total: DS.attr('string'),
     submitDate: DS.attr('date'),
     row: DS.attr('string'),
     browserName: DS.attr('string'),

@@ -49,7 +49,13 @@ export default {
 		"currentHeader": "Current Rate",
 		"category": "Category",
 		"shareWith": "Share Budget-In-A-Box with friends and family",
-		"thankYou": "Thank you!"
+		"thankYou": "Thank you!",
+        "raceWhite": "White",
+        "raceHispanic": "Hispanic or Latino",
+        "raceBlack": "Black or African American",
+        "raceNativeAm": "Native American or American Indian",        
+        "raceAsian": "Asian / Pacific Islander",        
+        "raceOther": "Other"
 	},
 
 	"cardTitle": {

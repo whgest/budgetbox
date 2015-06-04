@@ -1,7 +1,7 @@
 {
   "name": "budgetbox",
   "version": "0.0.0",
-  "description": "BudgetBox Prototype",
+  "description": "Budget In A Box",
   "private": true,
   "directories": {
     "doc": "doc",
@@ -19,6 +19,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "bower": "1.3.12",
     "broccoli-asset-rev": "^2.0.0",
     "ember-cli": "^0.2.0",
     "ember-cli-6to5": "^3.0.0",

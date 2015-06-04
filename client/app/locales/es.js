@@ -47,7 +47,13 @@ export default {
 		"currentHeader": "Tasa actual",
 		"category": "Categoria",
 		"shareWith": "Compartir el Budget-In-A-Box con amigos y familiares",
-		"thankYou": "¡Gracias!"
+		"thankYou": "¡Gracias!",
+        "raceWhite": "White",
+        "raceHispanic": "Hispanic or Latino",
+        "raceBlack": "Black or African American",
+        "raceNativeAm": "Native American or American Indian",        
+        "raceAsian": "Asian / Pacific Islander",        
+        "raceOther": "Other"
 	},
 
 	"cardTitle": {

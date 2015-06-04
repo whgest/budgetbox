@@ -63,6 +63,7 @@ export default Em.Controller.extend({
 	estimatedTotal: function() {
 		var total = 0;
 		this.get('allCards').filterBy('showResults', true).mapBy('selectedAmount').forEach(function(i) {total += i;});
+		this.set('userResponseModel.total', total.toString());
 		return total;
 	}.property('model.index'),
 
