@@ -2,10 +2,14 @@
   "name": "budgetbox-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "test"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "hapi": "^8.6.0",
+    "request": "^2.57.0"
+  }
 }
