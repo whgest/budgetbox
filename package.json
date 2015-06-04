@@ -8,8 +8,11 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "hapi": "^8.6.0",
     "request": "^2.57.0"
+  },
+  "engines": {
+    "node": "0.12.2"
   }
 }
