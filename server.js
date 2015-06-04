@@ -113,10 +113,35 @@ server.route({
     },
 });
 
+server.route({
+    method: ['POST'],
+    path:'/user-response',
+    config: {
+        cors: {
+            origin: [''],
+            additionalHeaders: ['X-App-Token']
+        },
+        handler: route_handlers.response_post
+    },
+});
 
 server.route({
     method: ['OPTIONS'],
     path:'/userResponse',
+    config: {
+        cors: {
+            origin: [''],
+            additionalHeaders: ['X-App-Token']
+        },
+        handler: function(request, reply) {
+            reply();
+        }
+    }
+});
+
+server.route({
+    method: ['OPTIONS'],
+    path:'/user-response',
     config: {
         cors: {
             origin: [''],
@@ -138,6 +163,32 @@ server.route({
         },
         handler: route_handlers.feedback_post
     },
+});
+
+server.route({
+    method: ['POST'],
+    path:'/user-feedback',
+    config: {
+        cors: {
+            origin: [''],
+            additionalHeaders: ['X-App-Token']
+        },
+        handler: route_handlers.feedback_post
+    },
+});
+
+server.route({
+    method: ['OPTIONS'],
+    path:'/user-feedback',
+    config: {
+        cors: {
+            origin: [''],
+            additionalHeaders: ['X-App-Token']
+        },
+        handler: function(request, reply) {
+            reply();
+        }
+    }
 });
 
 
