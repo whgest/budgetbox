@@ -3,7 +3,7 @@ var RequestModule = require('request');
 
 var server = new Hapi.Server();
 server.connection({
-    port: 8080
+    port: process.env.PORT || 5000
 });
 
 var Config = {
