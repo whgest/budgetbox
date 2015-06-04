@@ -18,17 +18,17 @@
 				</div>
 			</div>	 --}}
 			<div class="row form-group">
-				<div class="col-sm-3">
+				<div class="col-sm-4">
 					<label>{{t "loc.yourGender"}}</label>			
 					{{view "select" class="form-control input-lg" prompt=view.genderPrompt content=view.genderOptions value=userFeedbackModel.gender disabled=feedbackWasSubmitted}}
 				</div>
 
-				<div class="col-sm-3">
+				<div class="col-sm-4">
 					<label for="ageField">{{t "loc.yourAge"}}</label>
 					{{view "select" class="form-control input-lg" prompt=view.agePrompt elementId="ageField" disabled=feedbackWasSubmitted content=view.ageOptions value=userFeedbackModel.ageBracket}}
 				</div>
 				
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<label for="raceField">{{t "loc.yourRace"}}</label>
 					{{view "select" class="form-control input-lg" prompt=view.racePrompt elementId="raceField" disabled=feedbackWasSubmitted content=view.raceOptions value=userFeedbackModel.race}}
 				</div>
