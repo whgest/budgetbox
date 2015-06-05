@@ -14,7 +14,7 @@
 			<form>
 				<div class="form-group">
 					<label for="zipCodeField">{{t "loc.zipCode"}} <sup>*</sup></label>			
-					{{input class="form-control" type="text" maxlength=5 elementId="zipCodeField" value=userResponseModel.postalCode}}
+					{{input class="form-control input-lg" type="text" maxlength=5 elementId="zipCodeField" value=userResponseModel.postalCode}}
 					{{#liquid-if showZipValidation use="toDown"}}
 						<div class="form-msg form-msg__warning">*{{t "loc.invalidZipCode"}}</div>
 					{{/liquid-if}}
@@ -28,7 +28,7 @@
 					<p><a href="http://www.austintexas.gov/GIS/CouncilDistrictMap/" target="_blank">{{t "loc.findDistrict"}}</a></p>
 					</div>
 					</div>
-					{{view "select" class="form-control" prompt=view.districtPrompt elementId="districtField" content=view.districtOptions optionValuePath="content.districtNum" optionLabelPath="content.districtName" value=userResponseModel.district}}
+					{{view "select" class="form-control input-lg" prompt=view.districtPrompt elementId="districtField" content=view.districtOptions optionValuePath="content.districtNum" optionLabelPath="content.districtName" value=userResponseModel.district}}
 					{{#liquid-if showDistrictValidation use="toDown"}}
 				
 					<div class="form-msg form-msg__warning"><sup>*</sup>{{t "loc.invalidDistrict"}}</div>
